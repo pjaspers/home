@@ -1,0 +1,15 @@
+turn_off_downstairs:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.stalamp
+          - light.radiolamp
+          - light.kleine_rode_lamp
+        transition: 5
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.grote_kast
+    - service: notify.notify
+      data:
+        message: 'Turned on the ceiling light!'
