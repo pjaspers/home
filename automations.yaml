@@ -59,3 +59,17 @@
     domain: light
     entity_id: light.badkamer
     type: turn_on
+
+- id: presence-leave
+  alias: 'Turn off things when leaving'
+  trigger:
+    - platform: state
+      entity_id: person.piet_jaspers
+      to: 'not_home'
+  action:
+    - service: light.turn_on
+      entity_id: light.stalamp
+    - service: notify.mobile_app_proteus
+      data:
+        title: "You not here"
+        message: "You left"
