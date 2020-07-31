@@ -12,7 +12,8 @@ tts:
 
 # Discovery addon https://www.home-assistant.io/integrations/discovery/
 discovery:
-    
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+customize: !include customize.yml

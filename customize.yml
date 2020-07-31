@@ -1,0 +1,40 @@
+light.badkamer:
+  icon: mdi:coach-lamp
+light.fran_gang:
+  icon: mdi:globe-light
+light.kleine_rode_lamp:
+  icon: mdi:lava-lamp
+light.hanglamp:
+  icon: mdi:globe-light
+light.radiolamp:
+  icon: mdi:lamp
+light.s_a:
+  icon: mdi:ceiling-light
+light.s_b:
+  icon: mdi:ceiling-light
+light.s_c:
+  icon: mdi:ceiling-light
+light.s_d:
+  icon: mdi:ceiling-light
+light.s_e:
+  icon: mdi:ceiling-light
+light.s_f:
+  icon: mdi:ceiling-light
+light.stalamp:
+  icon: floor-lamp
+light.voorste_hal:
+  icon: mdi:globe-light
+
+# People
+person.piet:
+  icon: mdi:human-male
+
+person.christine:
+  icon: mdi:human-female
+
+switch.fran_stopcontact:
+  icon: mdi:power-socket-fr
+switch.roos_stopcontact:
+  icon: mdi:power-socket-fr
+switch.grote_kast:
+  icon: mdi:power-socket-fr
