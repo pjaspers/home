@@ -1,0 +1,61 @@
+- id: '1571332505279'
+  alias: Slow
+  description: ''
+  trigger:
+  - platform: webhook
+    webhook_id: test
+  action:
+  - data:
+      brightness: 10
+      entity_id:
+      - light.stalamp
+      transition: 3
+    service: light.turn_on
+- id: '1594417973352'
+  alias: Turn off the lights at 00:15
+  description: ''
+  trigger:
+  - at: 00:15
+    platform: time
+  condition: []
+  action:
+  - device_id: 4f316c733dff4446be269b4843f7d35a
+    domain: light
+    entity_id: light.stalamp
+    type: turn_off
+  - device_id: 58abb1dcc03c4153a6fb8939fe5a40db
+    domain: light
+    entity_id: light.radiolamp
+    type: turn_off
+  - device_id: 9e7067dc6a7a4fcdaf33a5f66568569d
+    domain: light
+    entity_id: light.badkamer
+    type: turn_off
+  - device_id: 91e14332d2504950b9b7c4d32d9e54fc
+    domain: switch
+    entity_id: switch.grote_kast
+    type: turn_off
+- id: '1594418013941'
+  alias: Turn on lights at 20:00
+  description: ''
+  trigger:
+  - at: '20:00'
+    platform: time
+  condition: []
+  action:
+  - device_id: 4f316c733dff4446be269b4843f7d35a
+    domain: light
+    entity_id: light.stalamp
+    type: turn_on
+  - device_id: 58abb1dcc03c4153a6fb8939fe5a40db
+    domain: light
+    entity_id: light.radiolamp
+    type: turn_on
+  - device_id: 91e14332d2504950b9b7c4d32d9e54fc
+    domain: switch
+    entity_id: switch.grote_kast
+    type: turn_on
+  - device_id: 9e7067dc6a7a4fcdaf33a5f66568569d
+    domain: light
+    entity_id: light.badkamer
+    type: turn_on
