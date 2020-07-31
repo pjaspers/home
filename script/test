@@ -1,0 +1,23 @@
+#!/usr/bin/env -S ruby --disable-gems
+require 'yaml'
+
+ascii = ->(code, s) { "\e[#{code}m#{s}\e[0m" }
+green = ->(s) { ascii.(32, s) }
+red = ->(s) { ascii.(31, s) }
+
+errors = []
+Dir.glob('**/*{yml,yaml}') do |path|
+  begin
+    YAML.parse(File.open(path))
+    puts "%-3s => %s" % [green.("OK"), path]
+  rescue Psych::SyntaxError => exception
+    errors << exception
+    puts "%-3s => %s" % [red.("NOK"), path]
+  end
+end
+
+if errors.empty?
+  exit 0
+else
+  exit 1
+end
