@@ -1,0 +1,6 @@
+level_1_lights:
+  name: All lights on ground floor
+  entities:
+    - light.kleine_rode_lamp
+    - light.stalamp
+    - light.radiolamp
