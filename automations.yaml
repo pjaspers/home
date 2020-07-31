@@ -73,3 +73,15 @@
       data:
         title: "You not here"
         message: "You left"
+
+- id: light-submarine
+  alias: 'Make the hallway use red light at night'
+  trigger:
+    - platform: time
+      at: 19:00
+  action:
+    - service: light.turn_on
+      entity_id: light.badkamer
+      brightess: 35
+      transition: 2
+      color_name: red
