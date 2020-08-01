@@ -50,6 +50,24 @@
   trigger:
     - platform: time
       at: '07:00'
+    - platform: time
+      at: '07:30'
+  condition:
+    condition: or
+    conditions:
+      - condition: time
+        before: '07:20:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: time
+        after: '07:20:00'
+        weekday:
+          - sat
+          - sun
   action:
     - service: homeassistant.turn_on
       entity_id:
@@ -59,3 +77,12 @@
       data:
         title: "Turned on lights for girls"
         message: "Girls incoming"
+    - delay: 00:01:00
+    - service: homeassistant.turn_off
+      entity_id:
+        - switch.fran_stopcontact
+        - switch.roos_stopcontact
+    - service: notify.mobile_app_proteus
+      data:
+        title: "Turned off lights for girls"
+        message: "Girls will be already there"
