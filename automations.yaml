@@ -33,9 +33,10 @@
   action:
     - service: light.turn_on
       entity_id: light.badkamer
-      brightess: 35
-      transition: 2
-      color_name: red
+      data:
+        brightness: 35
+        transition: 2
+        color_name: red
 
 - id: presence-leave
   alias: 'Turn off things when leaving'
@@ -100,23 +101,27 @@
   action:
     - service: light.turn_on
       entity_id: light.badkamer
-      brightess: 70
-      transition: 2
-      color_name: golden
+      data:
+        brightness: 70
+        transition: 2
+        color_name: golden
     - service: light.turn_on
       entity_id: light.kleine_rode_lamp
-      brightess: 70
-      transition: 2
+      data:
+        brightness: 70
+        transition: 2
     - service: light.turn_on
       entity_id: light.radiolamp
-      brightess: 70
-      transition: 2
-      color_name: golden
+      data:
+        brightness: 70
+        transition: 2
+        color_name: golden
     - service: light.turn_on
       entity_id: light.stalamp
-      brightess: 70
-      transition: 2
-      color_name: golden
+      data:
+        brightness: 70
+        transition: 2
+        color_name: golden
     - service: homeassistant.turn_on
       entity_id: switch.grote_kast
     - service: notify.mobile_app_proteus
