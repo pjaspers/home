@@ -16,4 +16,4 @@ discovery:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-customize: !include customize.yml
+# customize: !include customize.yml
