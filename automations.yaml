@@ -2,7 +2,7 @@
   alias: Turn off the lights at 00:15
   description: ''
   trigger:
-  - at: 00:15
+  - at: "00:15"
     platform: time
   condition: []
   action:
@@ -29,7 +29,7 @@
   alias: 'Make the hallway use red light at night'
   trigger:
     - platform: time
-      at: 19:00
+      at: "19:00"
   action:
     - service: light.turn_on
       entity_id: light.badkamer
@@ -54,9 +54,9 @@
   alias: "Turn on the lights for the girls"
   trigger:
     - platform: time
-      at: 07:00
+      at: "07:00"
     - platform: time
-      at: 07:30
+      at: "07:30"
   condition:
     condition: or
     conditions:
@@ -97,7 +97,7 @@
   alias: 'Make waking up less of a hassle'
   trigger:
     - platform: time
-      at: 06:50
+      at: "06:50"
   action:
     - service: light.turn_on
       entity_id: light.badkamer
