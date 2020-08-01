@@ -1,3 +1,5 @@
+homeassistant:
+  customize: !include customize.yaml
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
@@ -16,4 +18,3 @@ discovery:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-# customize: !include customize.yml
