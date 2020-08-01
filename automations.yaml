@@ -77,7 +77,7 @@
       data:
         title: "Turned on lights for girls"
         message: "Girls incoming"
-    - delay: 00:01:00
+    - delay: 01:00:00
     - service: homeassistant.turn_off
       entity_id:
         - switch.fran_stopcontact
