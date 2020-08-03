@@ -51,7 +51,7 @@
     - service: light.turn_on
       entity_id: light.badkamer
       data:
-        brightness: 35
+        brightness: 50
         transition: 2
         color_name: red
 
@@ -119,24 +119,24 @@
     - service: light.turn_on
       entity_id: light.badkamer
       data:
-        brightness: 70
+        brightness: 190
         transition: 2
         color_name: golden
     - service: light.turn_on
       entity_id: light.kleine_rode_lamp
       data:
-        brightness: 70
+        brightness: 190
         transition: 2
     - service: light.turn_on
       entity_id: light.radiolamp
       data:
-        brightness: 70
+        brightness: 190
         transition: 2
         color_name: golden
     - service: light.turn_on
       entity_id: light.stalamp
       data:
-        brightness: 70
+        brightness: 190
         transition: 2
         color_name: golden
     - service: homeassistant.turn_on
