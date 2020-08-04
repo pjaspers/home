@@ -1,5 +1,11 @@
 homeassistant:
   customize: !include customize.yml
+  time_zone: Europe/Brussels
+  unit_system: metric
+  elevation: !secret home_elevation
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  name: !secret home_name
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
