@@ -29,6 +29,7 @@ alexa_media
 custom_components
 tts
 secrets.yaml
+secrets.yml
 secrets
 known_devices.yaml
 .homekit.state
@@ -39,5 +40,3 @@ nest.conf
 ipchange.yaml
 ip_bans.yaml
 production_auth.json
-
-
