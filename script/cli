@@ -1,0 +1,1 @@
+sudo docker exec -it $(sudo docker container ls -qf name=cli) bash
