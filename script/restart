@@ -1,1 +1,8 @@
-sudo docker exec $(sudo docker container ls -qf name=cli) ha core restart
+#! /usr/bin/env bash
+echo "Finding a docker"
+
+DID=sudo docker container ls -qf name=cli
+echo "  -> Issuing restart at ${DID}"
+
+sudo docker exec "${DID}" ha core restart
+echo "  => Restarted"
