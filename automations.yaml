@@ -39,8 +39,8 @@
       entity_id: light.badkamer
     - service: notify.mobile_app_proteus
       data:
-        title: "Half an hour till sunset!"
-        message: "I turned the lights on for you"
+        title: "9 AM"
+        message: "Turned off the lights"
 
 - id: light-submarine
   alias: 'Make the hallway use red light at night'
