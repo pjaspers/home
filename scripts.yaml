@@ -11,9 +11,6 @@ turn_off_downstairs:
     - service: homeassistant.turn_off
       data:
         entity_id: switch.grote_kast
-    - service: notify.notify
-      data:
-        message: 'Turned off downstairs'
 
 turn_on_downstairs:
   sequence:
@@ -29,6 +26,3 @@ turn_on_downstairs:
     - service: homeassistant.turn_on
       data:
         entity_id: switch.grote_kast
-    - service: notify.notify
-      data:
-        message: 'Turned on downstairs'
