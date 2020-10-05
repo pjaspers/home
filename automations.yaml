@@ -2,146 +2,140 @@
   alias: Turn off the lights at 00:15
   description: ''
   trigger:
-  - at: "00:15"
+  - at: 00:15
     platform: time
   condition: []
   action:
-    - service: script.turn_on
-      entity_id: script.turn_off_downstairs
-
+  - service: script.turn_on
+    entity_id: script.turn_off_downstairs
 - id: evening-mode
   alias: Turn on lights half an hour before sunset
   description: ''
   trigger:
-    - platform: sun
-      event: sunset
-      offset: '-00:30:00'
+  - event: sunset
+    offset: -01:00:00
+    platform: sun
   condition: []
   action:
-    - service: script.turn_on
-      entity_id: script.turn_on_downstairs
-    - service: notify.mobile_app_proteus
-      data:
-        title: "Half an hour till sunset!"
-        message: "I turned the lights on for you"
-
+  - entity_id: script.turn_on_downstairs
+    service: script.turn_on
+  - data:
+      message: I turned the lights on for you
+      title: Half an hour till sunset!
+    service: notify.mobile_app_proteus
+  mode: single
 - id: day-mode
   alias: Turn off lights at 9
-  description: 'No need for lights during the day'
+  description: No need for lights during the day
   trigger:
-    - platform: time
-      at: '09:00'
+  - platform: time
+    at: 09:00
   condition: []
   action:
-    - service: script.turn_on
-      entity_id: script.turn_off_downstairs
-    - service: light.turn_off
-      entity_id: light.badkamer
-    - service: notify.mobile_app_proteus
-      data:
-        title: "9 AM"
-        message: "Turned off the lights"
-
+  - service: script.turn_on
+    entity_id: script.turn_off_downstairs
+  - service: light.turn_off
+    entity_id: light.badkamer
+  - service: notify.mobile_app_proteus
+    data:
+      title: 9 AM
+      message: Turned off the lights
 - id: light-submarine
-  alias: 'Make the hallway use red light at night'
+  alias: Make the hallway use red light at night
   trigger:
-    - platform: time
-      at: "19:00"
+  - platform: time
+    at: '19:00'
   action:
-    - service: light.turn_on
-      entity_id: light.badkamer
-      data:
-        brightness: 35
-        transition: 2
-        color_name: red
-
+  - service: light.turn_on
+    entity_id: light.badkamer
+    data:
+      brightness: 35
+      transition: 2
+      color_name: red
 - id: presence-leave
-  alias: 'Turn off things when leaving'
+  alias: Turn off things when leaving
   trigger:
-    - platform: state
-      entity_id: person.piet_jaspers
-      to: 'not_home'
+  - platform: state
+    entity_id: person.piet_jaspers
+    to: not_home
   action:
-    - service: notify.mobile_app_proteus
-      data:
-        title: "You not here"
-        message: "You left"
-
+  - service: notify.mobile_app_proteus
+    data:
+      title: You not here
+      message: You left
 - id: wake-girls
-  alias: "Turn on the lights for the girls"
+  alias: Turn on the lights for the girls
   trigger:
-    - platform: time
-      at: "07:00"
-    - platform: time
-      at: "07:30"
+  - platform: time
+    at: 07:00
+  - platform: time
+    at: 07:30
   condition:
     condition: or
     conditions:
-      - condition: time
-        before: '07:20:00'
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      - condition: time
-        after: '07:20:00'
-        weekday:
-          - sat
-          - sun
+    - condition: time
+      before: 07:20:00
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: time
+      after: 07:20:00
+      weekday:
+      - sat
+      - sun
   action:
-    - service: homeassistant.turn_on
-      entity_id:
-        - switch.fran_stopcontact
-        - switch.roos_stopcontact
-    - service: notify.mobile_app_proteus
-      data:
-        title: "Turned on lights for girls"
-        message: "Girls incoming"
-    - delay: 01:00:00
-    - service: homeassistant.turn_off
-      entity_id:
-        - switch.fran_stopcontact
-        - switch.roos_stopcontact
-    - service: notify.mobile_app_proteus
-      data:
-        title: "Turned off lights for girls"
-        message: "Girls will be already there"
-
-
+  - service: homeassistant.turn_on
+    entity_id:
+    - switch.fran_stopcontact
+    - switch.roos_stopcontact
+  - service: notify.mobile_app_proteus
+    data:
+      title: Turned on lights for girls
+      message: Girls incoming
+  - delay: 01:00:00
+  - service: homeassistant.turn_off
+    entity_id:
+    - switch.fran_stopcontact
+    - switch.roos_stopcontact
+  - service: notify.mobile_app_proteus
+    data:
+      title: Turned off lights for girls
+      message: Girls will be already there
 - id: morning-mode
-  alias: 'Make waking up less of a hassle'
+  alias: Make waking up less of a hassle
   trigger:
-    - platform: time
-      at: "06:50"
+  - platform: time
+    at: 06:50
   action:
-    - service: light.turn_on
-      entity_id: light.badkamer
-      data:
-        brightness: 70
-        transition: 2
-        color_name: golden
-    - service: light.turn_on
-      entity_id: light.kleine_rode_lamp
-      data:
-        brightness: 70
-        transition: 2
-    - service: light.turn_on
-      entity_id: light.radiolamp
-      data:
-        brightness: 70
-        transition: 2
-        color_name: golden
-    - service: light.turn_on
-      entity_id: light.stalamp
-      data:
-        brightness: 70
-        transition: 2
-        color_name: golden
-    - service: homeassistant.turn_on
-      entity_id: switch.grote_kast
-    - service: notify.mobile_app_proteus
-      data:
-        title: "Morning mode activated!"
-        message: ""
+  - service: light.turn_on
+    entity_id: light.badkamer
+    data:
+      brightness: 70
+      transition: 2
+      color_name: golden
+  - service: light.turn_on
+    entity_id: light.kleine_rode_lamp
+    data:
+      brightness: 70
+      transition: 2
+  - service: light.turn_on
+    entity_id: light.radiolamp
+    data:
+      brightness: 70
+      transition: 2
+      color_name: golden
+  - service: light.turn_on
+    entity_id: light.stalamp
+    data:
+      brightness: 70
+      transition: 2
+      color_name: golden
+  - service: homeassistant.turn_on
+    entity_id: switch.grote_kast
+  - service: notify.mobile_app_proteus
+    data:
+      title: Morning mode activated!
+      message: ''
