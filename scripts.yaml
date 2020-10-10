@@ -10,10 +10,9 @@ turn_off_downstairs:
     - delay: 5
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.grote_kast
-    - service: notify.notify
-      data:
-        message: 'Turned off downstairs'
+        entity_id:
+          - switch.grote_kast
+          - kelder.stopcontact
 
 turn_on_downstairs:
   sequence:
@@ -28,7 +27,6 @@ turn_on_downstairs:
     - delay: 5
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.grote_kast
-    - service: notify.notify
-      data:
-        message: 'Turned on downstairs'
+        entity_id:
+          - switch.grote_kast
+          - kelder.stopcontact
