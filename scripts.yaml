@@ -12,6 +12,9 @@ turn_off_downstairs:
       data:
         entity_id:
           - switch.grote_kast
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
           - kelder.stopcontact
 
 turn_on_downstairs:
@@ -29,4 +32,7 @@ turn_on_downstairs:
       data:
         entity_id:
           - switch.grote_kast
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
           - kelder.stopcontact
