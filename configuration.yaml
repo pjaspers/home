@@ -24,6 +24,19 @@ discovery:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+
+# Integrations
 webostv:
   host: 192.168.1.45
   name: Living Room TV
+homekit:
+  filter:
+    include_entities:
+      - light.badkamer
+      - light.stalamp
+      - light.radiolamp
+      - light.kleine_rode_lamp
+      - switch.fran_stopcontact
+      - switch.roos_stopcontact
+      - switch.grote_kast
+      - switch.kelder_stopcontact
