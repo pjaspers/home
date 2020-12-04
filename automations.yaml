@@ -58,7 +58,6 @@
       brightness: 50
       transition: 2
       color_name: red
-
 - id: presence-leave
   alias: Turn off things when leaving
   trigger:
@@ -146,3 +145,54 @@
     data:
       title: Morning mode activated!
       message: ''
+- id: '1606908289501'
+  alias: Turn on basement light when there is movement
+  trigger:
+  - type: motion
+    platform: device
+    device_id: ef6b64c80cf9f301f3e07d0bc069214e
+    entity_id: binary_sensor.presence_6
+    domain: binary_sensor
+  action:
+  - type: turn_on
+    device_id: 1cb3c7370b1d11eb8ec2afc4a2832ccf
+    entity_id: switch.kelder_stopcontact
+    domain: switch
+  mode: single
+- id: '1606908325908'
+  alias: Turn off basement light 10 minutes after last movement
+  trigger:
+  - type: no_motion
+    domain: binary_sensor
+    device_id: ef6b64c80cf9f301f3e07d0bc069214e
+    platform: device
+    entity_id: binary_sensor.presence_6
+    for:
+      minutes: 10
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.kelder_stopcontact
+  - service: notify.mobile_app_proteus
+    data:
+      title: Lights out!
+      message: ''
+- id: '1606919267630'
+  alias: New Automation
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: ef6b64c80cf9f301f3e07d0bc069214e
+    entity_id: binary_sensor.presence_6
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 1cb3c7370b1d11eb8ec2afc4a2832ccf
+    entity_id: switch.kelder_stopcontact
+    domain: switch
+  - service: notify.mobile_app_proteus
+    data:
+      title: hi there
+  mode: single
