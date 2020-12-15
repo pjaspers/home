@@ -196,3 +196,21 @@
     data:
       title: hi there
   mode: single
+- id: '1607795493492'
+  alias: Kattenbak
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 346efe062200efe1b1ba6082021c0148
+    entity_id: binary_sensor.tradfri_motion_sensor
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: notify.mobile_app_proteus
+    data:
+      message: Kattenbak beweging
+  - service: notify.living_room_tv
+    data:
+      message: Kattenbak beweging
+  mode: single
