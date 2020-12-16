@@ -24,6 +24,16 @@ discovery:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+light:
+- platform: mqtt
+  name: Hal Voordeur
+  unique_id: shelly_hal_voordeur
+  payload_on: "on"
+  payload_off: "off"
+  qos: 1
+  state_topic: shellies/shelly1-98F4ABF280C6/relay/0
+  command_topic: shellies/shelly1-98F4ABF280C6/relay/0/command
+  json_attributes_topic: shellies/shelly1-98F4ABF280C6/info
 
 # Integrations
 webostv:
