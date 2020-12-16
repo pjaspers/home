@@ -6,6 +6,7 @@ turn_off_downstairs:
           - light.stalamp
           - light.radiolamp
           - light.kleine_rode_lamp
+          - light.hal_voordeur
         transition: 5
     - delay: 5
     - service: homeassistant.turn_off
@@ -22,6 +23,7 @@ turn_on_downstairs:
           - light.stalamp
           - light.radiolamp
           - light.kleine_rode_lamp
+          - light.hal_voordeur
         transition: 5
         brightness: 200
     - delay: 5

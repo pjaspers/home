@@ -51,3 +51,4 @@ homekit:
       - switch.roos_stopcontact
       - switch.grote_kast
       - switch.kelder_stopcontact
+      - light.hal_voordeur
