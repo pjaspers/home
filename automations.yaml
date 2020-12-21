@@ -116,31 +116,14 @@
   - platform: time
     at: 06:50
   action:
+  - entity_id: script.turn_on_downstairs
+    service: script.turn_on
   - service: light.turn_on
     entity_id: light.badkamer
     data:
       brightness: 190
       transition: 2
       color_name: golden
-  - service: light.turn_on
-    entity_id: light.kleine_rode_lamp
-    data:
-      brightness: 70
-      transition: 2
-  - service: light.turn_on
-    entity_id: light.radiolamp
-    data:
-      brightness: 190
-      transition: 2
-      color_name: golden
-  - service: light.turn_on
-    entity_id: light.stalamp
-    data:
-      brightness: 190
-      transition: 2
-      color_name: golden
-  - service: homeassistant.turn_on
-    entity_id: switch.grote_kast
   - service: notify.mobile_app_proteus
     data:
       title: Morning mode activated!
