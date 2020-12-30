@@ -7,8 +7,9 @@
   condition: []
   action:
   - service: scene.turn_on
-    entity_id: night
-    transition: 10
+    data:
+      entity_id: night
+      transition: 10
 - id: evening-mode
   alias: Turn on lights an hour before sunset
   description: ''
