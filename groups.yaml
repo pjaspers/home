@@ -1,5 +1,5 @@
-switches__wake_up:
-  name: Wake up lights
+switches__girls:
+  name: Switches for Roos & Fran
   entities:
     - switch.fran_stopcontact
     - switch.roos_stopcontact
