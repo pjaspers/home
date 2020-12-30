@@ -1,0 +1,19 @@
+switches__wake_up:
+  name: Wake up lights
+  entities:
+    - switch.fran_stopcontact
+    - switch.roos_stopcontact
+
+lights__ground_floor:
+  name: All lights at ground floor
+  entities:
+    - light.stalamp
+    - light.radiolamp
+    - light.kleine_rode_lamp
+    - light.hal_voordeur
+
+switches__ground_floor:
+  name: All switches at ground floor
+  entities:
+    - switch.grote_kast
+    - switch.kelder_stopcontact
