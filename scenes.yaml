@@ -1,0 +1,30 @@
+- name: Night
+  icon: mdi:weather-night
+  entities:
+    group.lights__ground_floor:
+      state: "off"
+      transition: 10
+    switches__ground_floor:
+      state: "off"
+
+- name: Sunset
+  entities:
+    light.stalamp:
+      state: "on"
+      brightness: 100
+    light.radiolamp:
+      state: "on"
+      brightness: 100
+    light.kleine_rode_lamp:
+      state: "on"
+      brightness: 100
+    light.hal_voordeur:
+      state: "on"
+      brightness: 100
+    light.badkamer:
+      state: "on"
+      brightness: 190
+      transition: 2
+      color_name: golden
+    switches__ground_floor:
+      state: "on"

@@ -6,8 +6,8 @@
     platform: time
   condition: []
   action:
-  - service: script.turn_on
-    entity_id: script.turn_off_downstairs
+  - service: scene.turn_on
+    entity_id: night
 - id: evening-mode
   alias: Turn on lights an hour before sunset
   description: ''
@@ -17,19 +17,13 @@
     platform: sun
   condition: []
   action:
-  - entity_id: script.turn_on_downstairs
-    service: script.turn_on
-  - service: light.turn_on
-    entity_id: light.badkamer
-    data:
-      brightness: 190
-      transition: 2
-      color_name: golden
-  - data:
-      message: I turned the lights on for you
-      title: An hour till sunset!
-    service: notify.mobile_app_proteus
-  mode: single
+    - service: scene.turn_on
+      entity_id: sunset
+    - service: notify.mobile_app_proteus
+      data:
+        message: I turned the lights on for you
+        title: An hour till sunset!
+      mode: single
 - id: day-mode
   alias: Turn off lights at 9
   description: No need for lights during the day
