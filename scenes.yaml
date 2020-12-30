@@ -1,11 +1,19 @@
 - name: Night
   icon: mdi:weather-night
   entities:
-    group.lights__ground_floor:
+    light.stalamp:
       state: "off"
-      transition: 10
-    switches__ground_floor:
+    light.radiolamp:
       state: "off"
+    light.kleine_rode_lamp:
+      state: "off"
+    light.hal_voordeur:
+      state: "off"
+    switch.grote_kast:
+      state: "off"
+    switch.kelder_stopcontact:
+      state: "off"
+
 
 - name: Sunset
   entities:
@@ -26,5 +34,7 @@
       brightness: 190
       transition: 2
       color_name: golden
-    switches__ground_floor:
+    switch.grote_kast:
+      state: "on"
+    switch.kelder_stopcontact:
       state: "on"
