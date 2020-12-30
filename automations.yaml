@@ -8,6 +8,7 @@
   action:
   - service: scene.turn_on
     entity_id: night
+    transition: 10
 - id: evening-mode
   alias: Turn on lights an hour before sunset
   description: ''
@@ -19,6 +20,7 @@
   action:
     - service: scene.turn_on
       entity_id: sunset
+      transition: 10
     - service: notify.mobile_app_proteus
       data:
         message: I turned the lights on for you

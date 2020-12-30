@@ -32,8 +32,7 @@
     light.badkamer:
       state: "on"
       brightness: 190
-      transition: 2
-      color_name: golden
+      color_name: gold
     switch.grote_kast:
       state: "on"
     switch.kelder_stopcontact:
