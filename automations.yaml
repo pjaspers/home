@@ -91,14 +91,14 @@
       - sun
   action:
   - service: homeassistant.turn_on
-    entity_id: group.switches__girls
+    entity_id: group.switches_girls
   - service: notify.mobile_app_proteus
     data:
       title: Turned on lights for girls
       message: Girls incoming
   - delay: 01:00:00
   - service: homeassistant.turn_off
-    entity_id: group.switches__girls
+    entity_id: group.switches_girls
   - service: notify.mobile_app_proteus
     data:
       title: Turned off lights for girls

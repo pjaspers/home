@@ -1,10 +1,10 @@
-switches__girls:
+switches_girls:
   name: Switches for Roos & Fran
   entities:
     - switch.fran_stopcontact
     - switch.roos_stopcontact
 
-lights__ground_floor:
+lights_ground_floor:
   name: All lights at ground floor
   entities:
     - light.stalamp
@@ -12,7 +12,7 @@ lights__ground_floor:
     - light.kleine_rode_lamp
     - light.hal_voordeur
 
-switches__ground_floor:
+switches_ground_floor:
   name: All switches at ground floor
   entities:
     - switch.grote_kast
