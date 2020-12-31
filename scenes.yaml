@@ -15,7 +15,7 @@
       state: "off"
 
 - name: Morning
-  icon: mdi-weather-sunset-up
+  icon: mdi:weather-sunset-up
   entities:
     light.stalamp:
       state: "on"
