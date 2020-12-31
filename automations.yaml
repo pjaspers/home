@@ -10,6 +10,8 @@
     data:
       entity_id: scene.night
       transition: 10
+  - service: homeassistant.turn_off
+    entity_id: switch.kerstboom
 - id: evening-mode
   alias: Turn on lights an hour before sunset
   description: ''
@@ -113,6 +115,8 @@
     data:
       entity_id: scene.morning
       transition: 10
+  - service: homeassistant.turn_on
+    entity_id: switch.kerstboom
   - service: notify.mobile_app_proteus
     data:
       title: Morning mode activated!
