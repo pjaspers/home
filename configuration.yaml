@@ -35,9 +35,8 @@ light:
   state_topic: shellies/shelly1-98F4ABF280C6/relay/0
   command_topic: shellies/shelly1-98F4ABF280C6/relay/0/command
   json_attributes_topic: shellies/shelly1-98F4ABF280C6/info
-
 - platform: mqtt
-  name: Grote Kast
+  name: Grote Kast Lamp
   unique_id: shelly_grote_kast
   payload_on: "on"
   payload_off: "off"
