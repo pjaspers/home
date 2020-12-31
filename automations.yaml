@@ -109,13 +109,10 @@
   - platform: time
     at: 06:50
   action:
-  - entity_id: script.turn_on_downstairs
-    service: script.turn_on
-  - service: light.turn_on
-    entity_id: light.badkamer
+  - service: scene.turn_on
     data:
-      brightness: 190
-      color_name: golden
+      entity_id: scene.morning
+      transition: 10
   - service: notify.mobile_app_proteus
     data:
       title: Morning mode activated!

@@ -14,6 +14,29 @@
     switch.kelder_stopcontact:
       state: "off"
 
+- name: Morning
+  icon: mdi-weather-sunset-up
+  entities:
+    light.stalamp:
+      state: "on"
+      brightness: 100
+    light.radiolamp:
+      state: "on"
+      brightness: 100
+    light.kleine_rode_lamp:
+      state: "on"
+      brightness: 100
+    light.hal_voordeur:
+      state: "on"
+      brightness: 100
+    light.badkamer:
+      state: "on"
+      brightness: 200
+      color_name: gold
+    light.grote_kast_lamp:
+      state: "on"
+    switch.kelder_stopcontact:
+      state: "on"
 
 - name: Sunset
   entities:
