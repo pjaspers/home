@@ -58,7 +58,8 @@ homekit:
       - light.kleine_rode_lamp
       - light.hanglamp
       - light.grote_kast_lamp
+      - light.hal_voordeur
       - switch.fran_stopcontact
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
-      - light.hal_voordeur
+      - switch.kerstboom
