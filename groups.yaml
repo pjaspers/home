@@ -11,9 +11,9 @@ lights_ground_floor:
     - light.radiolamp
     - light.kleine_rode_lamp
     - light.hal_voordeur
+    - light.grote_kast_lamp
 
 switches_ground_floor:
   name: All switches at ground floor
   entities:
-    - switch.grote_kast
     - switch.kelder_stopcontact

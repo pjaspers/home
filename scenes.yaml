@@ -9,7 +9,7 @@
       state: "off"
     light.hal_voordeur:
       state: "off"
-    switch.grote_kast:
+    light.grote_kast_lamp:
       state: "off"
     switch.kelder_stopcontact:
       state: "off"
@@ -33,7 +33,7 @@
       state: "on"
       brightness: 190
       color_name: gold
-    switch.grote_kast:
+    light.grote_kast_lamp:
       state: "on"
     switch.kelder_stopcontact:
       state: "on"

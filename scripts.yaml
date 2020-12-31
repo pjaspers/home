@@ -7,12 +7,12 @@ turn_off_downstairs:
           - light.radiolamp
           - light.kleine_rode_lamp
           - light.hal_voordeur
+          - light.grote_kast_lamp
         transition: 5
     - delay: 5
     - service: homeassistant.turn_off
       data:
         entity_id:
-          - switch.grote_kast
           - switch.kelder_stopcontact
 
 turn_on_downstairs:
@@ -24,11 +24,11 @@ turn_on_downstairs:
           - light.radiolamp
           - light.kleine_rode_lamp
           - light.hal_voordeur
+          - light.grote_kast_lamp
         transition: 5
         brightness: 200
     - delay: 5
     - service: homeassistant.turn_on
       data:
         entity_id:
-          - switch.grote_kast
           - switch.kelder_stopcontact
