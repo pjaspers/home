@@ -63,3 +63,4 @@ homekit:
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
       - switch.kerstboom
+sensor: !include sensors.yaml

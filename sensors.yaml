@@ -1,0 +1,12 @@
+- platform: buienradar
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  timeframe: 30
+  monitored_conditions:
+    - symbol
+    - humidity
+    - temperature
+    - windspeed
+    - pressure
+    - precipitation_forecast_average
+    - rainchance_1d
