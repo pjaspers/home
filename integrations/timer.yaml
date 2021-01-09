@@ -1,0 +1,4 @@
+basement_light:
+  name: Basement light
+  duration: '00:10:00'
+  icon: mdi:door

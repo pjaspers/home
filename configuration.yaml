@@ -21,49 +21,21 @@ tts:
 # Discovery addon https://www.home-assistant.io/integrations/discovery/
 discovery:
 
-input_datetime: !include integrations/input_datetime.yaml
-input_boolean: !include integrations/input_boolean.yaml
-timer: !include integrations/timer.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
-light:
-- platform: mqtt
-  name: Hal Voordeur
-  unique_id: shelly_hal_voordeur
-  payload_on: "on"
-  payload_off: "off"
-  qos: 1
-  state_topic: shellies/shelly1-98F4ABF280C6/relay/0
-  command_topic: shellies/shelly1-98F4ABF280C6/relay/0/command
-  json_attributes_topic: shellies/shelly1-98F4ABF280C6/info
-- platform: mqtt
-  name: Grote Kast Lamp
-  unique_id: shelly_grote_kast
-  payload_on: "on"
-  payload_off: "off"
-  qos: 1
-  state_topic: shellies/shelly1-8CAAB54B46BE/relay/0
-  command_topic: shellies/shelly1-8CAAB54B46BE/relay/0/command
-  json_attributes_topic: shellies/shelly1-8CAAB54B46BE/info
-- platform: mqtt
-  name: Badkamer
-  unique_id: shelly_badkamer
-  payload_on: "on"
-  payload_off: "off"
-  qos: 1
-  state_topic: shellies/shelly1-40F520168D6D/relay/0
-  command_topic: shellies/shelly1-40F520168D6D/relay/0/command
-  json_attributes_topic: shellies/shelly1-40F520168D6D/info
 
 # Integrations
+input_datetime: !include integrations/input_datetime.yaml
+input_boolean: !include integrations/input_boolean.yaml
+timer: !include integrations/timer.yaml
+light: !include integrations/light.yaml
 webostv: !include integrations/webostv.yaml
-  host: 192.168.1.45
-  name: Living Room TV
 homekit:
   filter:
     include_entities:
+      - light.badkamer_hal
       - light.badkamer
       - light.stalamp
       - light.radiolamp
@@ -75,4 +47,6 @@ homekit:
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
       - switch.kerstboom
+# Still in UI: Deconz, Tado, Ubiquiti, Synology, Harmony Hub
+
 sensor: !include sensors.yaml

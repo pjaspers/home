@@ -1,0 +1,27 @@
+- platform: mqtt
+  name: Hal Voordeur
+  unique_id: shelly_hal_voordeur
+  payload_on: "on"
+  payload_off: "off"
+  qos: 1
+  state_topic: shellies/shelly1-98F4ABF280C6/relay/0
+  command_topic: shellies/shelly1-98F4ABF280C6/relay/0/command
+  json_attributes_topic: shellies/shelly1-98F4ABF280C6/info
+- platform: mqtt
+  name: Grote Kast Lamp
+  unique_id: shelly_grote_kast
+  payload_on: "on"
+  payload_off: "off"
+  qos: 1
+  state_topic: shellies/shelly1-8CAAB54B46BE/relay/0
+  command_topic: shellies/shelly1-8CAAB54B46BE/relay/0/command
+  json_attributes_topic: shellies/shelly1-8CAAB54B46BE/info
+- platform: mqtt
+  name: Badkamer
+  unique_id: shelly_badkamer
+  payload_on: "on"
+  payload_off: "off"
+  qos: 1
+  state_topic: shellies/shelly1-40F520168D6D/relay/0
+  command_topic: shellies/shelly1-40F520168D6D/relay/0/command
+  json_attributes_topic: shellies/shelly1-40F520168D6D/info

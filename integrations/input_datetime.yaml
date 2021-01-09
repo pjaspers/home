@@ -1,0 +1,14 @@
+alarm_clock_girls:
+    name: Wake up the girls
+    has_date: false
+    has_time: true
+
+wake_up_house:
+    name: Wake up the house
+    has_date: false
+    has_time: true
+
+go_to_bed_house:
+    name: Go sleep house
+    has_date: false
+    has_time: true
