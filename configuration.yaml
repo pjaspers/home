@@ -21,6 +21,9 @@ tts:
 # Discovery addon https://www.home-assistant.io/integrations/discovery/
 discovery:
 
+input_datetime: !include integrations/input_datetime.yaml
+input_boolean: !include integrations/input_boolean.yaml
+timer: !include integrations/timer.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 scene: !include scenes.yaml
@@ -55,7 +58,7 @@ light:
   json_attributes_topic: shellies/shelly1-40F520168D6D/info
 
 # Integrations
-webostv:
+webostv: !include integrations/webostv.yaml
   host: 192.168.1.45
   name: Living Room TV
 homekit:

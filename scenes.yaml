@@ -29,7 +29,7 @@
     light.hal_voordeur:
       state: "on"
       brightness: 100
-    light.badkamer:
+    light.badkamer_hal:
       state: "on"
       brightness: 200
       color_name: gold
@@ -52,7 +52,7 @@
     light.hal_voordeur:
       state: "on"
       brightness: 100
-    light.badkamer:
+    light.badkamer_hal:
       state: "on"
       brightness: 190
       color_name: gold

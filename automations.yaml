@@ -41,7 +41,7 @@
   - service: script.turn_on
     entity_id: script.turn_off_downstairs
   - service: light.turn_off
-    entity_id: light.badkamer
+    entity_id: light.badkamer_hal
   - service: notify.mobile_app_proteus
     data:
       title: 9 AM
@@ -53,7 +53,7 @@
     at: '19:00'
   action:
   - service: light.turn_on
-    entity_id: light.badkamer
+    entity_id: light.badkamer_hal
     data:
       brightness: 50
       color_name: red
