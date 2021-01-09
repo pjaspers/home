@@ -3,12 +3,22 @@ alarm_clock_girls:
     has_date: false
     has_time: true
 
+alarm_clock_girls_weekend:
+    name: Wake up the girls
+    has_date: false
+    has_time: true
+
 wake_up_house:
     name: Wake up the house
     has_date: false
     has_time: true
 
 go_to_bed_house:
-    name: Go sleep house
+    name: Go to bed house
     has_date: false
     has_time: true
+
+submarine_house:
+  name: Switch hall light to red
+  has_date: false
+  has_time: true

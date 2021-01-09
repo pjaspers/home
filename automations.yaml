@@ -1,8 +1,8 @@
 - id: nighty-night
-  alias: Turn off the lights at 00:15
+  alias: Turn off the lights at night
   description: ''
   trigger:
-  - at: 00:15
+  - at: input_datetime.go_to_bed_house
     platform: time
   condition: []
   action:
@@ -50,7 +50,7 @@
   alias: Make the hallway use red light at night
   trigger:
   - platform: time
-    at: '19:00'
+    at: input_datetime.submarine_house
   action:
   - service: light.turn_on
     entity_id: light.badkamer_hal
@@ -72,14 +72,14 @@
   alias: Turn on the lights for the girls
   trigger:
   - platform: time
-    at: 07:00
+    at: input_datetime.alarm_clock_girls
   - platform: time
-    at: 07:30
+    at: input_datetime.alarm_clock_girls_weekend
   condition:
     condition: or
     conditions:
     - condition: time
-      after: 07:20:00
+      before: input_datetime.alarm_clock_girls_weekend
       weekday:
       - mon
       - tue
@@ -87,7 +87,7 @@
       - thu
       - fri
     - condition: time
-      after: 07:20:00
+      after: input_datetime.alarm_clock_girls
       weekday:
       - sat
       - sun
