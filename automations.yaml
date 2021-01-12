@@ -109,7 +109,7 @@
   alias: Make waking up less of a hassle
   trigger:
   - platform: time
-    at: 06:50
+    at: input_datetime.wake_up_house
   action:
   - service: scene.turn_on
     data:
