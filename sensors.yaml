@@ -10,3 +10,10 @@
     - pressure
     - precipitation_forecast_average
     - rainchance_1d
+
+- platform: template
+  sensors:
+    office_temperature_offset:
+      friendly_name: "Diff on office temp"
+      unit_of_measurement: "°C"
+      value_template: "{{states('sensor.office_temperature')|float - states('sensor.bureau_temperature')|float}}"
