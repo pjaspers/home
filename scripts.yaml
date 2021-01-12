@@ -32,3 +32,19 @@ turn_on_downstairs:
       data:
         entity_id:
           - switch.kelder_stopcontact
+
+sync_tado_office:
+  alias: Sync tado
+  sequence:
+    - service: tado.set_climate_timer
+      data:
+        entity_id: climate.bureau
+        time_period: '01:00:00'
+        temperature: >-
+          {{ states('sensor.bureau_temperature')|float +
+          states('sensor.office_temperature_offset')|float }}
+    - service: notify.mobile_app_proteus
+      data:
+        message: "Firing it up to {{ states('sensor.bureau_temperature')|float + states('sensor.office_temperature_offset')|float }}"
+        title: SYNCHRONIZE TADO
+  mode: single
