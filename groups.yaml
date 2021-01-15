@@ -12,8 +12,22 @@ lights_ground_floor:
     - light.kleine_rode_lamp
     - light.hal_voordeur
     - light.grote_kast_lamp
+    - switch.kelder_stopcontact
+
+lights_first_floor:
+  name: All lights at first floor
+  entities:
+    - light.hanglamp
+    - light.badkamer
+    - light.badkamer_hal
 
 switches_ground_floor:
   name: All switches at ground floor
   entities:
     - switch.kelder_stopcontact
+
+lights_hall:
+  name: All lights in the hallway
+  entities:
+    - light.hal_voordeur
+    - light.badkamer_hal
