@@ -12,6 +12,7 @@ lights_ground_floor:
     - light.kleine_rode_lamp
     - light.hal_voordeur
     - light.grote_kast_lamp
+    - light.buitenlamp
     - switch.kelder_stopcontact
 
 lights_first_floor:

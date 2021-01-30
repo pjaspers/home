@@ -1,17 +1,7 @@
 - name: Night
   icon: mdi:weather-night
   entities:
-    light.stalamp:
-      state: "off"
-    light.radiolamp:
-      state: "off"
-    light.kleine_rode_lamp:
-      state: "off"
-    light.hal_voordeur:
-      state: "off"
-    light.grote_kast_lamp:
-      state: "off"
-    switch.kelder_stopcontact:
+    group.lights_ground_floor:
       state: "off"
 
 - name: Morning
