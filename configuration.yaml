@@ -43,6 +43,7 @@ homekit:
       - light.hanglamp
       - light.grote_kast_lamp
       - light.hal_voordeur
+      - light.buitenlamp
       - switch.fran_stopcontact
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
