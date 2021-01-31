@@ -1,0 +1,191 @@
+title: Home
+views:
+  - badges:
+      - entity: person.piet_jaspers
+      - entity: person.christine
+      - entity: sun.sun
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: button
+                entity: scene.night
+                show_name: true
+                icon_height: 32px
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.night
+              - type: button
+                entity: scene.morning
+                show_name: true
+                icon_height: 32px
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.morning
+              - type: button
+                entity: scene.sunset
+                show_name: true
+                icon_height: 32px
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.sunset
+          - entities:
+              - entity: group.lights_ground_floor
+              - entity: group.switches_girls
+              - entity: group.lights_first_floor
+              - entity: group.lights_hall
+            title: Lampen
+            type: entities
+          - entity: weather.home
+            type: weather-forecast
+    panel: false
+    path: default_view
+    title: Home
+  - title: Onder
+    path: onder
+    badges: []
+    cards:
+      - type: grid
+        title: Verwarming
+        square: true
+        cards:
+          - type: thermostat
+            entity: climate.living
+          - type: thermostat
+            entity: climate.goei_kamer
+          - type: thermostat
+            entity: climate.keuken
+      - type: grid
+        title: Lichten
+        square: true
+        cards:
+          - type: light
+            entity: light.radiolamp
+          - type: light
+            entity: light.stalamp
+          - type: light
+            entity: light.kleine_rode_lamp
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.grote_kast
+            show_state: true
+            show_icon: true
+            show_name: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.kelder_stopcontact
+            show_state: true
+            show_icon: true
+            show_name: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: script.turn_off_downstairs
+            name: Turn off all lights
+            icon: 'mdi:lightbulb-multiple-off'
+          - type: button
+            tap_action:
+              action: toggle
+            entity: script.turn_on_downstairs
+            name: Turn on all lights
+            icon: 'mdi:lightbulb-multiple'
+  - title: Roos & Fran
+    path: roos_en_fran
+    badges: []
+    cards:
+      - entities:
+          - switch.fran_stopcontact
+        title: Fran
+        type: entities
+      - entities:
+          - switch.roos_stopcontact
+        title: Roos
+        type: entities
+  - title: Bureau
+    path: bureau
+    badges: []
+    cards:
+      - entities:
+          - light.hanglamp
+        title: Bureau
+        type: entities
+      - type: sensor
+        entity: sensor.office_temperature_offset
+        graph: line
+        detail: 1
+      - type: glance
+        entities:
+          - entity: sensor.office_temperature
+          - entity: sensor.office_humidity
+          - entity: sensor.office_pressure
+          - entity: sensor.office_sensor_battery_level
+        state_color: false
+        show_name: false
+        show_icon: true
+      - type: 'custom:mini-climate'
+        entity: climate.bureau
+        target_temperature:
+          icons:
+            up: 'mdi:chevron-up'
+            down: 'mdi:chevron-down'
+          unit: °C
+          min: 16
+          max: 31
+          step: 0.5
+          source:
+            entity: sensor.office_temperature
+          change_action: >
+            (value, entity) => this.call_service('climate', 'set_temperature', {
+            entity_id: entity.entity_id, temperature: value })
+      - type: thermostat
+        entity: climate.bureau
+      - type: history-graph
+        entities:
+          - entity: sensor.office_temperature
+          - entity: sensor.bureau_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+      - type: history-graph
+        entities:
+          - entity: sensor.awair_awair_score
+          - entity: sensor.awair_carbon_dioxide
+          - entity: sensor.awair_humidity
+          - entity: sensor.awair_pm2_5
+          - entity: sensor.awair_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+  - title: Hal
+    path: hal
+    badges: []
+    cards:
+      - entities:
+          - light.badkamer
+        title: Hal badkamer
+        type: entities
+      - entities:
+          - light.fran_gang
+        title: Hal boven
+        type: entities
+      - entities:
+          - light.voorste_hal
+        title: Hal onder
+        type: entities
+  - title: Kelder
+    path: kelder
+    badges: []
+    cards:
+      - entities:
+          - entity: sensor.grotedoos_network_up
+          - entity: sensor.grotedoos_network_down
+        hours_to_show: 24
+        refresh_interval: 0
+        type: history-graph
