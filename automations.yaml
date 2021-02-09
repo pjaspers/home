@@ -171,3 +171,25 @@
     data:
       message: Kattenbak beweging
   mode: single
+
+- alias: Background light on when camera on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.pj_mini_camera_in_use
+    from: "off"
+    to: "on"
+    for: 0:00:02
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.hanglamp
+
+- alias: Background light off when camera off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.pj_mini_camera_in_use
+    from: "on"
+    to: "off"
+    for: 0:00:02
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.hanglamp
