@@ -48,6 +48,8 @@ homekit:
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
       - switch.kerstboom
+      - climate.bureau
+
 # Still in UI: Deconz, Tado, Ubiquiti, Synology, Harmony Hub
 
 sensor: !include sensors.yaml
