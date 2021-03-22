@@ -1,0 +1,7 @@
+basement_light_duration_minutes:
+  name: "Minutes before basement light shuts off again"
+  icon: mdi:clock-start
+  initial: 5
+  min: 0
+  max: 60
+  step: 1

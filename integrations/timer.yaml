@@ -1,4 +1,4 @@
 basement_light:
   name: Basement light
-  duration: '00:10:00'
+  duration: "00:{{ states('input_number.basement_light_duration_minutes') | int }}:00"
   icon: mdi:door
