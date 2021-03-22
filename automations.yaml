@@ -25,10 +25,6 @@
     data:
       entity_id: scene.sunset
       transition: 10
-  - service: notify.mobile_app_proteus
-    data:
-      message: I turned the lights on for you
-      title: An hour till sunset!
   mode: single
 - id: day-mode
   alias: Turn off lights at 9
@@ -42,10 +38,6 @@
     entity_id: script.turn_off_downstairs
   - service: light.turn_off
     entity_id: light.badkamer_hal
-  - service: notify.mobile_app_proteus
-    data:
-      title: 9 AM
-      message: Turned off the lights
 - id: light-submarine
   alias: Make the hallway use red light at night
   trigger:
@@ -94,17 +86,9 @@
   action:
   - service: homeassistant.turn_on
     entity_id: group.switches_girls
-  - service: notify.mobile_app_proteus
-    data:
-      title: Turned on lights for girls
-      message: Girls incoming
   - delay: 01:00:00
   - service: homeassistant.turn_off
     entity_id: group.switches_girls
-  - service: notify.mobile_app_proteus
-    data:
-      title: Turned off lights for girls
-      message: Girls will be already there
 - id: morning-mode
   alias: Make waking up less of a hassle
   trigger:
@@ -117,10 +101,6 @@
       transition: 10
   - service: homeassistant.turn_on
     entity_id: switch.kerstboom
-  - service: notify.mobile_app_proteus
-    data:
-      title: Morning mode activated!
-      message: ''
 - id: '1606908289501'
   alias: Turn on basement light when there is movement
   trigger:
@@ -149,10 +129,6 @@
   - service: homeassistant.turn_off
     data:
       entity_id: switch.kelder_stopcontact
-  - service: notify.mobile_app_proteus
-    data:
-      title: Lights out!
-      message: ''
 - id: '1607795493492'
   alias: Kattenbak
   description: ''
@@ -164,9 +140,6 @@
     domain: binary_sensor
   condition: []
   action:
-  - service: notify.mobile_app_proteus
-    data:
-      message: Kattenbak beweging
   - service: notify.living_room_tv
     data:
       message: Kattenbak beweging
