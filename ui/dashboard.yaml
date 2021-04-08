@@ -168,7 +168,7 @@ views:
     badges: []
     cards:
       - entities:
-          - light.badkamer
+          - light.badkamer_hal
         title: Hal badkamer
         type: entities
       - entities:
