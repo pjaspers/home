@@ -51,6 +51,11 @@ homekit:
       - climate.bureau
 
 # Still in UI: Deconz, Tado, Ubiquiti, Synology, Harmony Hub
+logger:
+  default: info
+  logs:
+    pydeconz: debug
+    homeassistant.components.deconz: debug
 
 sensor: !include sensors.yaml
 lovelace:
