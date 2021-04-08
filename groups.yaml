@@ -18,7 +18,7 @@ lights_ground_floor:
 lights_first_floor:
   name: All lights at first floor
   entities:
-    - light.hanglamp
+    - light.bureau
     - light.badkamer
     - light.badkamer_hal
 

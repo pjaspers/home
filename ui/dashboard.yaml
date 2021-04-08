@@ -115,7 +115,7 @@ views:
     badges: []
     cards:
       - entities:
-          - light.hanglamp
+          - light.bureau
         title: Bureau
         type: entities
       - type: sensor

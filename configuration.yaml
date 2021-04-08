@@ -40,7 +40,7 @@ homekit:
       - light.stalamp
       - light.radiolamp
       - light.kleine_rode_lamp
-      - light.hanglamp
+      - light.bureau
       - light.grote_kast_lamp
       - light.hal_voordeur
       - light.buitenlamp

@@ -154,7 +154,7 @@
     for: 0:00:02
   action:
     service: homeassistant.turn_on
-    entity_id: light.hanglamp
+    entity_id: light.bureau
 
 - alias: Background light off when camera off
   trigger:
@@ -165,4 +165,4 @@
     for: 0:00:02
   action:
     service: homeassistant.turn_off
-    entity_id: light.hanglamp
+    entity_id: light.bureau
