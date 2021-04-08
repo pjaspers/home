@@ -42,7 +42,7 @@
       brightness: 100
     light.badkamer_hal:
       state: "on"
-      brightness: 190
-      color_name: gold
+      brightness: 50
+      color_name: red
     light.grote_kast_lamp:
       state: "on"
