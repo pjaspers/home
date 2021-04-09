@@ -52,65 +52,67 @@ views:
     path: onder
     badges: []
     cards:
-      - type: grid
-        title: Verwarming
-        square: true
+      - type: vertical-stack
         cards:
-          - type: thermostat
-            entity: climate.living
-          - type: thermostat
-            entity: climate.goei_kamer
-          - type: thermostat
-            entity: climate.keuken
-      - type: grid
-        title: Lichten
-        square: true
-        cards:
-          - type: light
-            entity: light.radiolamp
-          - type: light
-            entity: light.stalamp
-          - type: light
-            entity: light.kleine_rode_lamp
-          - type: button
-            tap_action:
-              action: toggle
-            entity: light.grote_kast_lamp
-            show_state: true
-            show_icon: true
-            show_name: true
-          - type: button
-            tap_action:
-              action: toggle
-            entity: switch.kelder_stopcontact
-            show_state: true
-            show_icon: true
-            show_name: true
-          - type: button
-            tap_action:
-              action: toggle
-            entity: script.turn_off_downstairs
-            name: Turn off all lights
-            icon: 'mdi:lightbulb-multiple-off'
-          - type: button
-            tap_action:
-              action: toggle
-            entity: script.turn_on_downstairs
-            name: Turn on all lights
-            icon: 'mdi:lightbulb-multiple'
-      - type: grid
-        title: metrics
-        square: true
-        cards:
-          - type: history-graph
-            entities:
-              - entity: sensor.awair_awair_score
-              - entity: sensor.awair_carbon_dioxide
-              - entity: sensor.awair_humidity
-              - entity: sensor.awair_pm2_5
-              - entity: sensor.awair_temperature
-            hours_to_show: 24
-            refresh_interval: 0
+          - type: grid
+            title: Verwarming
+            square: true
+            cards:
+              - type: thermostat
+                entity: climate.living
+              - type: thermostat
+                entity: climate.goei_kamer
+              - type: thermostat
+                entity: climate.keuken
+          - type: grid
+            title: Lichten
+            square: true
+            cards:
+              - type: light
+                entity: light.radiolamp
+              - type: light
+                entity: light.stalamp
+              - type: light
+                entity: light.kleine_rode_lamp
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: light.grote_kast_lamp
+                show_state: true
+                show_icon: true
+                show_name: true
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: switch.kelder_stopcontact
+                show_state: true
+                show_icon: true
+                show_name: true
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: script.turn_off_downstairs
+                name: Turn off all lights
+                icon: 'mdi:lightbulb-multiple-off'
+              - type: button
+                tap_action:
+                  action: toggle
+                entity: script.turn_on_downstairs
+                name: Turn on all lights
+                icon: 'mdi:lightbulb-multiple'
+          - type: grid
+            title: metrics
+            square: true
+            cards:
+              - type: history-graph
+                entities:
+                  - entity: sensor.awair_awair_score
+                  - entity: sensor.awair_carbon_dioxide
+                  - entity: sensor.awair_humidity
+                  - entity: sensor.awair_pm2_5
+                  - entity: sensor.awair_temperature
+                hours_to_show: 24
+                refresh_interval: 0
   - title: Roos & Fran
     path: roos_en_fran
     badges: []
