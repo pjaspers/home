@@ -21,7 +21,7 @@ light.s_e:
 light.s_f:
   icon: mdi:ceiling-light
 light.stalamp:
-  icon: floor-lamp
+  icon: mdi:floor-lamp
 light.voorste_hal:
   icon: mdi:globe-light
 
