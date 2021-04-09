@@ -98,6 +98,15 @@ views:
             entity: script.turn_on_downstairs
             name: Turn on all lights
             icon: 'mdi:lightbulb-multiple'
+          - type: history-graph
+            entities:
+              - entity: sensor.awair_awair_score
+              - entity: sensor.awair_carbon_dioxide
+              - entity: sensor.awair_humidity
+              - entity: sensor.awair_pm2_5
+              - entity: sensor.awair_temperature
+            hours_to_show: 24
+            refresh_interval: 0
   - title: Roos & Fran
     path: roos_en_fran
     badges: []
@@ -152,15 +161,6 @@ views:
         entities:
           - entity: sensor.office_temperature
           - entity: sensor.bureau_temperature
-        hours_to_show: 24
-        refresh_interval: 0
-      - type: history-graph
-        entities:
-          - entity: sensor.awair_awair_score
-          - entity: sensor.awair_carbon_dioxide
-          - entity: sensor.awair_humidity
-          - entity: sensor.awair_pm2_5
-          - entity: sensor.awair_temperature
         hours_to_show: 24
         refresh_interval: 0
   - title: Hal
