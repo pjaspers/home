@@ -2,11 +2,14 @@
 
 ## Setup
 
-I'm running Home Assistant using this: https://community.home-assistant.io/t/hass-io-on-synology-dsm-native-package/125559/2 (I added SynoCommunity to my packages, and then you can find the package, which will start up a bunch of dockers).
+I used to run this on a Synology using this: https://community.home-assistant.io/t/hass-io-on-synology-dsm-native-package/125559/2, but have now switched to match the Home Assistant blessed hardware (and it is so much faster):
 
-I bought this Zigbee bridge: https://phoscon.de/en/conbee2, which is connected to the Synology (using an USB extenstion cord for better reception)
+- ODROID-N2+
+- 64gb eMMC
 
-I'm running it with https://github.com/marthoc/docker-deconz running on the Synology in a Docker.
+I bought this Zigbee bridge: https://phoscon.de/en/conbee2, which is connected to the odroid (using an USB extenstion cord for better reception), and using the Deconz addon
+
+
 
 ## HomeKit
 
