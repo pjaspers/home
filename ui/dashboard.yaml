@@ -172,11 +172,7 @@ views:
         title: Hal badkamer
         type: entities
       - entities:
-          - light.fran_gang
-        title: Hal boven
-        type: entities
-      - entities:
-          - light.voorste_hal
+          - light.hal_voordeur
         title: Hal onder
         type: entities
   - title: Kelder
