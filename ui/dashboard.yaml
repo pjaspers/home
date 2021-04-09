@@ -75,7 +75,7 @@ views:
           - type: button
             tap_action:
               action: toggle
-            entity: light.grote_kast
+            entity: light.grote_kast_lamp
             show_state: true
             show_icon: true
             show_name: true
