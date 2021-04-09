@@ -98,6 +98,10 @@ views:
             entity: script.turn_on_downstairs
             name: Turn on all lights
             icon: 'mdi:lightbulb-multiple'
+      - type: grid
+        title: metrics
+        square: true
+        cards:
           - type: history-graph
             entities:
               - entity: sensor.awair_awair_score
