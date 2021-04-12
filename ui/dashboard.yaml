@@ -84,13 +84,6 @@ views:
               - type: button
                 tap_action:
                   action: toggle
-                entity: switch.kelder_stopcontact
-                show_state: true
-                show_icon: true
-                show_name: true
-              - type: button
-                tap_action:
-                  action: toggle
                 entity: script.turn_off_downstairs
                 name: Turn off all lights
                 icon: 'mdi:lightbulb-multiple-off'
@@ -181,9 +174,23 @@ views:
     path: kelder
     badges: []
     cards:
-      - entities:
-          - entity: sensor.grotedoos_network_up
-          - entity: sensor.grotedoos_network_down
-        hours_to_show: 24
-        refresh_interval: 0
-        type: history-graph
+      - type: vertical-stack
+        cards:
+        - type: button
+          tap_action:
+            action: toggle
+          entity: switch.kelder_stopcontact
+          show_state: true
+          show_icon: true
+          show_name: true
+        - entities:
+            - entity: binary_sensor.presence_2
+          hours_to_show: 24
+          refresh_interval: 0
+          type: history-graph
+        - entities:
+            - entity: sensor.grotedoos_network_up
+            - entity: sensor.grotedoos_network_down
+          hours_to_show: 24
+          refresh_interval: 0
+          type: history-graph
