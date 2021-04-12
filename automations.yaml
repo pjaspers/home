@@ -107,7 +107,6 @@
   - type: motion
     platform: device
     device_id: ef6b64c80cf9f301f3e07d0bc069214e
-    entity_id: binary_sensor.presence_6
     domain: binary_sensor
   action:
   - type: turn_on
@@ -122,7 +121,6 @@
     domain: binary_sensor
     device_id: ef6b64c80cf9f301f3e07d0bc069214e
     platform: device
-    entity_id: binary_sensor.presence_6
     for:
       minutes: 10
   action:
