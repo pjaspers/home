@@ -109,8 +109,9 @@
       from: 'off'
       to: 'on'
   action:
-  - type: turn_on
-    entity_id: switch.kelder_stopcontact
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.kelder_stopcontact
 - id: '1606908325908'
   alias: Turn off basement light 10 minutes after last movement
   trigger:
