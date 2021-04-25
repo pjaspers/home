@@ -32,23 +32,7 @@ input_boolean: !include integrations/input_boolean.yaml
 timer: !include integrations/timer.yaml
 light: !include integrations/light.yaml
 webostv: !include integrations/webostv.yaml
-homekit:
-  filter:
-    include_entities:
-      - light.badkamer_hal
-      - light.badkamer
-      - light.stalamp
-      - light.radiolamp
-      - light.kleine_rode_lamp
-      - light.bureau
-      - light.grote_kast_lamp
-      - light.hal_voordeur
-      - light.buitenlamp
-      - switch.fran_stopcontact
-      - switch.roos_stopcontact
-      - switch.kelder_stopcontact
-      - switch.kerstboom
-      - climate.bureau
+homekit: !include integrations/homekit.yaml
 
 # Still in UI: Deconz, Tado, Ubiquiti, Synology, Harmony Hub
 logger:

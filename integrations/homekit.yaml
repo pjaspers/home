@@ -1,0 +1,23 @@
+filter:
+    include_entities:
+      - light.badkamer_hal
+      - light.badkamer
+      - light.stalamp
+      - light.radiolamp
+      - light.kleine_rode_lamp
+      - light.bureau
+      - light.grote_kast_lamp
+      - light.hal_voordeur
+      - light.buitenlamp
+      - switch.fran_stopcontact
+      - switch.roos_stopcontact
+      - switch.kelder_stopcontact
+      - switch.kerstboom
+      - climate.keuken
+      - climate.goei_kamer
+      - climate.living
+      - climate.bureau
+      - climate.badkamer
+      - climate.slaapkamer
+      - climate.fran
+      - climate.roos
