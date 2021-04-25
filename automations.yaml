@@ -119,7 +119,7 @@
     from: "on"
     to: "off"
     for:
-      minutes: input_number.basement_light_duration_minutes
+      minutes: 5
   action:
   - service: homeassistant.turn_off
     data:
