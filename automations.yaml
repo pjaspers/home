@@ -109,7 +109,7 @@
       from: 'off'
       to: 'on'
   action:
-  - service: homeassistant.turn_off
+  - service: homeassistant.turn_on
     data:
       entity_id: switch.kelder_stopcontact
 - id: '1606908325908'
