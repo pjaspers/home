@@ -104,25 +104,22 @@
 - id: '1606908289501'
   alias: Turn on basement light when there is movement
   trigger:
-  - type: motion
-    platform: device
-    device_id: ef6b64c80cf9f301f3e07d0bc069214e
-    domain: binary_sensor
+    - platform: state
+      entity_id: binary_sensor.presence_2
+      from: 'off'
+      to: 'on'
   action:
   - type: turn_on
-    device_id: 1cb3c7370b1d11eb8ec2afc4a2832ccf
     entity_id: switch.kelder_stopcontact
-    domain: switch
-  mode: single
 - id: '1606908325908'
   alias: Turn off basement light 10 minutes after last movement
   trigger:
-  - type: no_motion
-    domain: binary_sensor
-    device_id: ef6b64c80cf9f301f3e07d0bc069214e
-    platform: device
+  - platform: state
+    entity_id: binary_sensor.presence_2
+    from: "on"
+    to: "off"
     for:
-      minutes: 10
+      minutes: input_number.basement_light_duration_minutes
   action:
   - service: homeassistant.turn_off
     data:
