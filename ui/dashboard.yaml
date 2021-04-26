@@ -54,38 +54,40 @@ views:
     cards:
       - type: vertical-stack
         cards:
-          - type: light
-            entity: light.radiolamp
-          - type: light
-            entity: light.stalamp
-          - type: light
-            entity: light.kleine_rode_lamp
-          - type: button
-            tap_action:
-              action: toggle
-            entity: light.grote_kast
-            show_state: true
-            show_icon: true
-            show_name: true
-          - type: button
-            tap_action:
-              action: toggle
-            entity: switch.kelder_stopcontact
-            show_state: true
-            show_icon: true
-            show_name: true
-          - type: button
-            tap_action:
-              action: toggle
-            entity: script.turn_off_downstairs
-            name: Turn off all lights
-            icon: 'mdi:lightbulb-multiple-off'
-          - type: button
-            tap_action:
-              action: toggle
-            entity: script.turn_on_downstairs
-            name: Turn on all lights
-            icon: 'mdi:lightbulb-multiple'
+          - type: grid
+            cards:
+            - type: light
+              entity: light.radiolamp
+            - type: light
+              entity: light.stalamp
+            - type: light
+              entity: light.kleine_rode_lamp
+            - type: button
+              tap_action:
+                action: toggle
+              entity: light.grote_kast_lamp
+              show_state: true
+              show_icon: true
+              show_name: true
+            - type: button
+              tap_action:
+                action: toggle
+              entity: switch.kelder_stopcontact
+              show_state: true
+              show_icon: true
+              show_name: true
+            - type: button
+              tap_action:
+                action: toggle
+              entity: script.turn_off_downstairs
+              name: Turn off all lights
+              icon: 'mdi:lightbulb-multiple-off'
+            - type: button
+              tap_action:
+                action: toggle
+              entity: script.turn_on_downstairs
+              name: Turn on all lights
+              icon: 'mdi:lightbulb-multiple'
           - type: history-graph
             entities:
               - entity: sensor.awair_awair_score
