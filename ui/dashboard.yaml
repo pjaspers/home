@@ -170,6 +170,23 @@ views:
           - light.hal_voordeur
         title: Hal onder
         type: entities
+  - title: Badkamer
+    path: badkamer
+    badges: []
+    cards:
+      - entities:
+          - light.badkamer
+          - switch.kerstboom_stopcontact
+        title: Badkamer
+        type: entities
+  - title: Zolder
+    path: zolder
+    badges: []
+    cards:
+      - entities:
+          - light.color_light_11.
+        title: Zolder
+        type: entities
   - title: Kelder
     path: kelder
     badges: []

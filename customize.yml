@@ -36,5 +36,5 @@ switch.fran_stopcontact:
   icon: mdi:power-socket-fr
 switch.roos_stopcontact:
   icon: mdi:power-socket-fr
-switch.kerstboom:
+switch.kerstboom_stopcontact:
   icon: mdi:power-socket-fr

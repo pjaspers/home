@@ -10,8 +10,6 @@
     data:
       entity_id: scene.night
       transition: 10
-  - service: homeassistant.turn_off
-    entity_id: switch.kerstboom
 - id: evening-mode
   alias: Turn on lights an hour before sunset
   description: ''
@@ -99,8 +97,6 @@
     data:
       entity_id: scene.morning
       transition: 10
-  - service: homeassistant.turn_on
-    entity_id: switch.kerstboom
 - id: '1606908289501'
   alias: Turn on basement light when there is movement
   trigger:

@@ -12,7 +12,7 @@ filter:
       - switch.fran_stopcontact
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
-      - switch.kerstboom
+      - switch.kerstboom_stopcontact
       - climate.keuken
       - climate.goei_kamer
       - climate.living
