@@ -55,44 +55,39 @@ views:
       - type: vertical-stack
         cards:
           - type: grid
-            title: Verwarming
-            square: true
             cards:
-              - type: thermostat
-                entity: climate.living
-              - type: thermostat
-                entity: climate.goei_kamer
-              - type: thermostat
-                entity: climate.keuken
-          - type: grid
-            title: Lichten
-            square: true
-            cards:
-              - type: light
-                entity: light.radiolamp
-              - type: light
-                entity: light.stalamp
-              - type: light
-                entity: light.kleine_rode_lamp
-              - type: button
-                tap_action:
-                  action: toggle
-                entity: light.grote_kast_lamp
-                show_state: true
-                show_icon: true
-                show_name: true
-              - type: button
-                tap_action:
-                  action: toggle
-                entity: script.turn_off_downstairs
-                name: Turn off all lights
-                icon: 'mdi:lightbulb-multiple-off'
-              - type: button
-                tap_action:
-                  action: toggle
-                entity: script.turn_on_downstairs
-                name: Turn on all lights
-                icon: 'mdi:lightbulb-multiple'
+            - type: light
+              entity: light.radiolamp
+            - type: light
+              entity: light.stalamp
+            - type: light
+              entity: light.kleine_rode_lamp
+            - type: button
+              tap_action:
+                action: toggle
+              entity: light.grote_kast_lamp
+              show_state: true
+              show_icon: true
+              show_name: true
+            - type: button
+              tap_action:
+                action: toggle
+              entity: switch.kelder_stopcontact
+              show_state: true
+              show_icon: true
+              show_name: true
+            - type: button
+              tap_action:
+                action: toggle
+              entity: script.turn_off_downstairs
+              name: Turn off all lights
+              icon: 'mdi:lightbulb-multiple-off'
+            - type: button
+              tap_action:
+                action: toggle
+              entity: script.turn_on_downstairs
+              name: Turn on all lights
+              icon: 'mdi:lightbulb-multiple'
           - type: history-graph
             entities:
               - entity: sensor.awair_awair_score
@@ -128,9 +123,9 @@ views:
         detail: 1
       - type: glance
         entities:
-          - entity: sensor.office_temperature
-          - entity: sensor.office_humidity
-          - entity: sensor.office_pressure
+          - entity: sensor.office_sensor_temp
+          - entity: sensor.office_sensor_humidity
+          - entity: sensor.office_sensor_pressure
           - entity: sensor.office_sensor_battery_level
         state_color: false
         show_name: false
@@ -154,7 +149,7 @@ views:
         entity: climate.bureau
       - type: history-graph
         entities:
-          - entity: sensor.office_temperature
+          - entity: sensor.office_sensor_temp
           - entity: sensor.bureau_temperature
         hours_to_show: 24
         refresh_interval: 0
