@@ -179,7 +179,7 @@ views:
     badges: []
     cards:
       - entities:
-          - light.color_light_11.
+          - light.color_light_11
         title: Zolder
         type: entities
   - title: Kelder
