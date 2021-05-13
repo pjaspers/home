@@ -33,8 +33,11 @@ person.christine:
   icon: mdi:human-female
 
 switch.fran_stopcontact:
-  icon: mdi:power-socket-fr
+  icon: mdi:alarm
+  name: Wake Up Roos
 switch.roos_stopcontact:
-  icon: mdi:power-socket-fr
+  icon: mdi:alarm
+  name: Wake Up Roos
 switch.kerstboom_stopcontact:
-  icon: mdi:power-socket-fr
+  icon: mdi:fountain
+  name: Poezenfontein
