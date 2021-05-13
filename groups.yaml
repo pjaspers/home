@@ -22,6 +22,15 @@ lights_first_floor:
     - light.badkamer
     - light.badkamer_hal
 
+lights_second_floor:
+  name: All lights at second floor
+  entities:
+
+lights_attic:
+  name: All lights at attic
+  entities:
+    - light.color_light_11
+
 switches_ground_floor:
   name: All switches at ground floor
   entities:
