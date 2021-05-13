@@ -102,36 +102,50 @@ views:
     path: roos_en_fran
     badges: []
     cards:
-      - entities:
-          - switch.fran_stopcontact
-        title: Fran
-        type: entities
-      - type: glance
-        entities:
-          - entity: sensor.fran_temperature
-          - entity: sensor.humidity_fran
-          - entity: sensor.pressure_fran
-          - entity: sensor.fran_sensor_battery_level
-        state_color: false
-        show_name: false
-        show_icon: true
-      - type: thermostat
-        entity: climate.fran
-      - entities:
-          - switch.roos_stopcontact
-        title: Roos
-        type: entities
-      - type: glance
-        entities:
-          - entity: sensor.roos_temperature
-          - entity: sensor.humidity_roos
-          - entity: sensor.pressure_roos
-          - entity: sensor.roos_sensor_battery_level
-        state_color: false
-        show_name: false
-        show_icon: true
-      - type: thermostat
-        entity: climate.roos
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - entities:
+                  - switch.fran_stopcontact
+                title: Fran
+                type: entities
+              - type: glance
+                entities:
+                  - entity: sensor.fran_temperature
+                  - entity: sensor.humidity_fran
+                  - entity: sensor.pressure_fran
+                  - entity: sensor.fran_battery_level
+                state_color: false
+                show_name: false
+                show_icon: true
+              - type: thermostat
+                entity: climate.fran
+              - type: sensor
+                entity: sensor.fran_temperature
+                graph: line
+                detail: 1
+          - type: vertical-stack
+            cards:
+              - entities:
+                  - switch.roos_stopcontact
+                title: Roos
+                type: entities
+              - type: glance
+                entities:
+                  - entity: sensor.roos_temperature
+                  - entity: sensor.humidity_roos
+                  - entity: sensor.pressure_roos
+                  - entity: sensor.roos_battery_level
+                state_color: false
+                show_name: false
+                show_icon: true
+              - type: thermostat
+                entity: climate.roos
+              - type: sensor
+                entity: sensor.roos_temperature
+                graph: line
+                detail: 1
   - title: Bureau
     path: bureau
     badges: []
