@@ -102,6 +102,16 @@ views:
     path: roos_en_fran
     badges: []
     cards:
+      - type: markdown
+        content: >-
+          Wake up lights at: {{
+          states.input_datetime.alarm_clock_girls.attributes.hour }}:{{
+          states.input_datetime.alarm_clock_girls.attributes.minute }}
+          and in the weekends: {{
+          states.input_datetime.alarm_clock_girls_weekend.attributes.hour
+          }}:{{
+          states.input_datetime.alarm_clock_girls_weekend.attributes.minute
+          }}
       - type: horizontal-stack
         cards:
           - type: vertical-stack
