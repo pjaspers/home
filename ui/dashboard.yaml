@@ -196,6 +196,19 @@ views:
           - switch.kerstboom_stopcontact
         title: Badkamer
         type: entities
+      - type: sensor
+        entity: sensor.badkamer_temperature
+        graph: line
+        detail: 1
+      - type: thermostat
+        entity: climate.fran
+      - type: glance
+        entities:
+          - entity: sensor.badkamer_humidity
+          - entity: sensor.badkamer_temperature
+        state_color: false
+        show_name: false
+        show_icon: true
   - title: Zolder
     path: zolder
     badges: []
