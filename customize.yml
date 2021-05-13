@@ -34,10 +34,10 @@ person.christine:
 
 switch.fran_stopcontact:
   icon: mdi:alarm
-  name: Wake Up Roos
+  friendly_name: Wake Up Roos
 switch.roos_stopcontact:
   icon: mdi:alarm
-  name: Wake Up Roos
+  friendly_name: Wake Up Roos
 switch.kerstboom_stopcontact:
   icon: mdi:fountain
-  name: Poezenfontein
+  friendly_name: Poezenfontein
