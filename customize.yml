@@ -34,7 +34,7 @@ person.christine:
 
 switch.fran_stopcontact:
   icon: mdi:alarm
-  friendly_name: Wake Up Roos
+  friendly_name: Wake Up Fran
 switch.roos_stopcontact:
   icon: mdi:alarm
   friendly_name: Wake Up Roos
