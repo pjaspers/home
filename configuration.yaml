@@ -54,7 +54,7 @@ lovelace:
       filename: ui/dashboard.yaml
     lovelace-config:
       mode: yaml
-      title: Dashboard
+      title: Configuration
       icon: mdi:cog
       show_in_sidebar: true
       filename: ui/config.yaml
