@@ -131,21 +131,6 @@ views:
         state_color: false
         show_name: false
         show_icon: true
-      - type: 'custom:mini-climate'
-        entity: climate.bureau
-        target_temperature:
-          icons:
-            up: 'mdi:chevron-up'
-            down: 'mdi:chevron-down'
-          unit: °C
-          min: 16
-          max: 31
-          step: 0.5
-          source:
-            entity: sensor.office_temperature
-          change_action: >
-            (value, entity) => this.call_service('climate', 'set_temperature', {
-            entity_id: entity.entity_id, temperature: value })
       - type: thermostat
         entity: climate.bureau
       - type: history-graph
