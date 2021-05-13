@@ -52,3 +52,9 @@ lovelace:
       icon: mdi:truck-fast-outline
       show_in_sidebar: true
       filename: ui/dashboard.yaml
+    config:
+      mode: yaml
+      title: Dashboard
+      icon: mdi:cog
+      show_in_sidebar: true
+      filename: ui/config.yaml
