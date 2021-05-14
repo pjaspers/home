@@ -1,0 +1,34 @@
+title: Thermostats
+views:
+  - badges:
+      - entity: sensor.keuken_temperature
+      - entity: sensor.living_temperature
+      - entity: sensor.goei_kamer_temperature
+
+      - entity: sensor.badkamer_temperature
+      - entity: sensor.office_sensor_temp
+      - entity: sensor.slaapkamer_temperature
+
+      - entity: sensor.temperature_fran
+      - entity: sensor.temperature_roos
+    cards:
+      - type: grid
+        cards:
+          - entity: climate.keuken
+            type: thermostat
+          - entity: climate.living
+            type: thermostat
+          - entity: climate.goei_kamer
+            type: thermostat
+
+          - entity: climate.badkamer
+            type: thermostat
+          - entity: climate.bureau
+            type: thermostat
+          - entity: climate.slaapkamer
+            type: thermostat
+
+          - entity: climate.fran
+            type: thermostat
+          - entity: climate.roos
+            type: thermostat
