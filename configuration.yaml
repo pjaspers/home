@@ -63,7 +63,7 @@ lovelace:
       icon: mdi:cog
       show_in_sidebar: true
       filename: ui/config.yaml
-    such-hothothot:
+    lovelace-hothothot:
       mode: yaml
       title: ABCD
       icon: mdi:hot-tub
