@@ -1,13 +1,13 @@
 - id: "poezenfontein"
   alias: Turn off poezenfontein after 5 minutes of Franz drinking
   trigger:
-    - platform: state
+  - platform: state
+    entity_id: switch.kerstboom_stopcontact
+    from: "off"
+    to: "on"
+    for:
+      minutes: 5
+  action:
+  - service: homeassistant.turn_off
+    data:
       entity_id: switch.kerstboom_stopcontact
-      from: "off"
-      to: "on"
-      for:
-        minutes: 5
-        action:
-          - service: homeassistant.turn_off
-            data:
-              entity_id: switch.kerstboom_stopcontact
