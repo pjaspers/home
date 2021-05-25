@@ -22,7 +22,7 @@ tts:
 discovery:
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations
 scene: !include scenes.yaml
 script: !include scripts.yaml
 
