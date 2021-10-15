@@ -22,3 +22,7 @@ A side effect of buying things 'Designed for HomeKit' is that the device will wo
 - Don't be too smart
 - Expect to keep working without internet
 - Nothing essential (only scenic lights etc)
+
+House will go to sleep at: {{ states.input_datetime.go_to_bed_house.attributes.hour }}:{{ states.input_datetime.go_to_bed_house.attributes.minute }}
+
+Girls will wake up at: {{ states.input_datetime.alarm_clock_girls.attributes.hour }}:{{ states.input_datetime.alarm_clock_girls.attributes.minute }}
