@@ -141,6 +141,7 @@ views:
               - entities:
                   - entity: switch.roos_stopcontact
                   - entity: group.lights_roos_dollhouse
+                title: Roos
                 type: entities
               - type: glance
                 entities:
