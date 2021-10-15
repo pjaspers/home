@@ -21,5 +21,4 @@ filter:
       - climate.slaapkamer
       - climate.fran
       - climate.roos
-      - group.lights_roos_dollhouse
-      - group.lights_fran_dollhouse
+      - light.roos_dollhouse_test
