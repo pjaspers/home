@@ -43,9 +43,17 @@ lights_hall:
     - light.badkamer_hal
 
 lights_fran_dollhouse:
-  name: All floors in the dollhouse
+  name: Dollhouse
   entities:
     - light.dollhousefran_segment_1
     - light.dollhousefran_segment_2
     - light.dollhousefran_segment_3
     - light.dollhousefran_segment_4
+
+lights_roos_dollhouse:
+  name: Dollhouse
+  entities:
+    - light.dollhouseroos_segment_1
+    - light.dollhouseroos_segment_2
+    - light.dollhouseroos_segment_3
+    - light.dollhouseroos_segment_4

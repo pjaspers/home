@@ -139,8 +139,8 @@ views:
           - type: vertical-stack
             cards:
               - entities:
-                  - switch.roos_stopcontact
-                title: Roos
+                  - entity: switch.roos_stopcontact
+                  - entity: group.lights_roos_dollhouse
                 type: entities
               - type: glance
                 entities:
