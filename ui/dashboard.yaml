@@ -117,7 +117,8 @@ views:
           - type: vertical-stack
             cards:
               - entities:
-                  - switch.fran_stopcontact
+                  - entity: switch.fran_stopcontact
+                  - entity: group.lights_fran_dollhouse
                 title: Fran
                 type: entities
               - type: glance
