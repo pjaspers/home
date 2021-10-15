@@ -34,7 +34,6 @@
   command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
   command_off_template: '{"turn": "off"}'
   brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
-
 - platform: group
   name: Dollhouse Roos test
   unique_id: roos_dollhouse_test
