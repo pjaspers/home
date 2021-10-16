@@ -53,9 +53,29 @@ wakeup:
   alias: "Wake Up"
   icon: "mdi:party-popper"
   description: "Turns on doll house floor per floor"
-  variables:
-    dollhouse_entity: light.dollhouseroos
   fields:
+    dollhouse_entity:
+      name: "Name of the dollhouse"
+      description: "Name of the dollhouse"
+      required: true
+      example: "light.dollhouseroos"
+      selector:
+        text:
+    color_name:
+      name: "Color name"
+      description: "Color to wake up to"
+      default: "Pink"
+      selector:
+        text:
+    brightness:
+      name: "Brightness"
+      description: "Brigthness (percentage)"
+      default: 100
+      selector:
+        number:
+          min: 0
+          max: 100
+          step: 1
     minutes:
       name: Minutes
       description: "The amount of time to wait between floors"
@@ -80,7 +100,9 @@ wakeup:
       target:
         entity_id: "{{ dollhouse_entity }}_segment_1"
       data:
-        brightness: 100
+        brightness_pct: "{{ brightness }}"
+        transition: 2
+        color_name: "{{ color_name }}"
     - delay:
         # supports seconds, milliseconds, minutes, hours
         seconds: "5"
@@ -89,7 +111,9 @@ wakeup:
       target:
         entity_id: "{{ dollhouse_entity }}_segment_2"
       data:
-        brightness: 100
+        brightness_pct: "{{ brightness }}"
+        transition: 2
+        color_name: "{{ color_name }}"
     - delay:
         # supports seconds, milliseconds, minutes, hours
         seconds: "5"
@@ -98,10 +122,14 @@ wakeup:
       target:
         entity_id: "{{ dollhouse_entity }}_segment_3"
       data:
-        brightness: 100
+        brightness_pct: "{{ brightness }}"
+        transition: 2
+        color_name: "{{ color_name }}"
     - alias: "Attic"
       service: light.turn_on
       target:
         entity_id: "{{ dollhouse_entity }}_segment_4"
       data:
-        brightness: 100
+        brightness_pct: "{{ brightness }}"
+        transition: 2
+        color_name: "{{ color_name }}"
