@@ -48,3 +48,60 @@ sync_tado_office:
         message: "Firing it up to {{ states('sensor.bureau_temperature')|float + states('sensor.office_temperature_offset')|float }}"
         title: SYNCHRONIZE TADO
   mode: single
+
+wakeup:
+  alias: "Wake Up"
+  icon: "mdi:party-popper"
+  description: "Turns on doll house floor per floor"
+  variables:
+    dollhouse_entity: light.dollhouseroos
+  fields:
+    minutes:
+      name: Minutes
+      description: "The amount of time to wait between floors"
+      selector:
+        number:
+          min: 0
+          max: 60
+          step: 1
+          unit_of_measurement: minutes
+          mode: slider
+  # If called again while still running (probably in delay step), start over.
+  mode: restart
+  sequence:
+    - event: LOGBOOK_ENTRY
+      event_data:
+        name: Roos
+        message: is waking up
+        entity_id: device_tracker.paulus
+        domain: light
+    - alias: "First floor"
+      service: light.turn_on
+      target:
+        entity_id: "{{ dollhouse_entity }}_segment_1"
+      data:
+        brightness: 100
+    - delay:
+        # supports seconds, milliseconds, minutes, hours
+        seconds: "5"
+    - alias: "Second floor"
+      service: light.turn_on
+      target:
+        entity_id: "{{ dollhouse_entity }}_segment_2"
+      data:
+        brightness: 100
+    - delay:
+        # supports seconds, milliseconds, minutes, hours
+        seconds: "5"
+    - alias: "Third floor"
+      service: light.turn_on
+      target:
+        entity_id: "{{ dollhouse_entity }}_segment_3"
+      data:
+        brightness: 100
+    - alias: "Attic"
+      service: light.turn_on
+      target:
+        entity_id: "{{ dollhouse_entity }}_segment_4"
+      data:
+        brightness: 100
