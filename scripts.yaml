@@ -53,6 +53,10 @@ wakeup:
   alias: "Wake Up"
   icon: "mdi:party-popper"
   description: "Turns on doll house floor per floor"
+  variables:
+    dollhouse_entity: "light.dollhouseroos"
+    color_name: "DeepPink"
+    brightness: 100
   fields:
     dollhouse_entity:
       name: "Name of the dollhouse"
