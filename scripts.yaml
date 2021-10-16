@@ -59,12 +59,13 @@ wakeup:
       description: "Name of the dollhouse"
       required: true
       example: "light.dollhouseroos"
+      default: "light.dollhouseroos"
       selector:
         text:
     color_name:
       name: "Color name"
       description: "Color to wake up to"
-      default: "Pink"
+      default: "DeepPink"
       selector:
         text:
     brightness:
