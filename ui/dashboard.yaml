@@ -118,7 +118,7 @@ views:
             cards:
               - entities:
                   - entity: switch.fran_stopcontact
-                  - entity: group.lights_fran_dollhouse
+                  - entity: group.lights_dollhousefran
                 title: Fran
                 type: entities
               - type: glance
@@ -140,7 +140,7 @@ views:
             cards:
               - entities:
                   - entity: switch.roos_stopcontact
-                  - entity: group.lights_roos_dollhouse
+                  - entity: group.lights_dollhouseroos
                 title: Roos
                 type: entities
               - type: glance

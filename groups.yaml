@@ -42,7 +42,7 @@ lights_hall:
     - light.hal_voordeur
     - light.badkamer_hal
 
-lights_fran_dollhouse:
+lights_dollhousefran:
   name: Dollhouse
   entities:
     - light.dollhousefran_segment_1
@@ -50,7 +50,7 @@ lights_fran_dollhouse:
     - light.dollhousefran_segment_3
     - light.dollhousefran_segment_4
 
-lights_roos_dollhouse:
+lights_dollhouseroos:
   name: Dollhouse
   entities:
     - light.dollhouseroos_segment_1
