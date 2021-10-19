@@ -58,35 +58,6 @@
     data:
       title: You not here
       message: You left
-- id: wake-girls
-  alias: Turn on the lights for the girls
-  trigger:
-  - platform: time
-    at: input_datetime.alarm_clock_girls
-  - platform: time
-    at: input_datetime.alarm_clock_girls_weekend
-  condition:
-    condition: or
-    conditions:
-    - condition: time
-      before: input_datetime.alarm_clock_girls_weekend
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-    - condition: time
-      after: input_datetime.alarm_clock_girls
-      weekday:
-      - sat
-      - sun
-  action:
-  - service: homeassistant.turn_on
-    entity_id: group.switches_girls
-  - delay: 01:00:00
-  - service: homeassistant.turn_off
-    entity_id: group.switches_girls
 - id: morning-mode
   alias: Make waking up less of a hassle
   trigger:
