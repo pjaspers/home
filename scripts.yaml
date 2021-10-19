@@ -57,6 +57,7 @@ wakeup:
     dollhouse_entity: "light.dollhouseroos"
     color_name: "DeepPink"
     brightness: 100
+    delay: 5
   fields:
     dollhouse_entity:
       name: "Name of the dollhouse"
@@ -81,25 +82,19 @@ wakeup:
           min: 0
           max: 100
           step: 1
-    minutes:
-      name: Minutes
-      description: "The amount of time to wait between floors"
+    delay:
+      name: Delay
+      description: "The amount of time (in seconds) to wait between floors"
       selector:
         number:
           min: 0
-          max: 60
+          max: 600
           step: 1
-          unit_of_measurement: minutes
+          unit_of_measurement: seconds
           mode: slider
   # If called again while still running (probably in delay step), start over.
   mode: restart
   sequence:
-    - event: LOGBOOK_ENTRY
-      event_data:
-        name: Roos
-        message: is waking up
-        entity_id: device_tracker.paulus
-        domain: light
     - alias: "First floor"
       service: light.turn_on
       target:
@@ -109,8 +104,7 @@ wakeup:
         transition: 2
         color_name: "{{ color_name }}"
     - delay:
-        # supports seconds, milliseconds, minutes, hours
-        seconds: "5"
+        seconds: "{{ delay }}"
     - alias: "Second floor"
       service: light.turn_on
       target:
@@ -120,8 +114,7 @@ wakeup:
         transition: 2
         color_name: "{{ color_name }}"
     - delay:
-        # supports seconds, milliseconds, minutes, hours
-        seconds: "5"
+        seconds: "{{ delay }}"
     - alias: "Third floor"
       service: light.turn_on
       target:
