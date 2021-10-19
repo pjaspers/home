@@ -92,9 +92,13 @@ wakeup:
           step: 1
           unit_of_measurement: seconds
           mode: slider
-  # If called again while still running (probably in delay step), start over.
   mode: restart
   sequence:
+    - service: scene.create
+      data:
+        scene_id: "{{ dollhouse_entity }}_before"
+        snapshot_entities:
+          - "group.{{ dollhouse_entity }}"
     - alias: "First floor"
       service: light.turn_on
       target:
