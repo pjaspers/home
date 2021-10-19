@@ -94,11 +94,6 @@ wakeup:
           mode: slider
   mode: restart
   sequence:
-    - service: scene.create
-      data:
-        scene_id: "{{ dollhouse_entity }}_before"
-        snapshot_entities:
-          - "group.{{ dollhouse_entity }}"
     - alias: "First floor"
       service: light.turn_on
       target:
