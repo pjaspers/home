@@ -47,6 +47,11 @@
     data:
       brightness: 50
       color_name: red
+  - service: light.turn_on
+    entity_id:
+      - light.dollhouse_roos
+      - light.dollhouse_fran
+
 - id: presence-leave
   alias: Turn off things when leaving
   trigger:
