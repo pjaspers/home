@@ -57,3 +57,10 @@ lights_dollhouseroos:
     - light.dollhouseroos_segment_2
     - light.dollhouseroos_segment_3
     - light.dollhouseroos_segment_4
+
+climate_ground_floor:
+  name: All heaters at ground floor
+  entities:
+    - climate.living
+    - climate.keuken
+    - climate.goei_kamer
