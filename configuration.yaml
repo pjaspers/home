@@ -40,6 +40,14 @@ logger:
   logs:
     pydeconz: debug
     homeassistant.components.deconz: debug
+climate:
+  - platform: climate_group
+    name: 'Climate Ground Floor'
+    temperature_unit: C  # default to celsius, 'C' or 'F'
+    entities:
+    - climate.living
+    - climate.keuken
+    - climate.goei_kamer
 
 # Legacy: https://www.home-assistant.io/integrations/template#configuration-variables
 sensor: !include sensors.yaml
