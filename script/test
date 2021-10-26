@@ -12,7 +12,7 @@ Dir.glob('**/*{yml,yaml}') do |path|
     puts "%-3s => %s" % [green.("OK"), path]
   rescue Psych::SyntaxError => exception
     errors << exception
-    puts "%-3s => %s" % [red.("NOK"), path]
+    puts "%-3s => %s %s" % [red.("NOK"), path, exception]
   end
 end
 
