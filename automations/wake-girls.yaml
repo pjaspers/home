@@ -1,29 +1,82 @@
-- id: wake-girls
-  alias: Turn on the lights for the girls
+# Set up the triggers
+#
+- id: wake-girls-weekdays
+  alias: Wake up the girls during the week
   trigger:
-  - platform: time
-    at: input_datetime.alarm_clock_girls
-  - platform: time
-    at: input_datetime.alarm_clock_girls_weekend
+  - platform: template
+    value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls.attributes.timestamp | int - 900) | timestamp_custom('%H:%M', False)) }}"
   condition:
-    condition: or
-    conditions:
-    - condition: time
-      before: input_datetime.alarm_clock_girls_weekend
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-    - condition: time
-      after: input_datetime.alarm_clock_girls
-      weekday:
-      - sat
-      - sun
+    condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: "on"
+  action: &wake_actions
+    - event: "pj.wake-girls.prepare"
+      event_data:
+        weekday: true
+    - delay: 900
+    - event: "pj.wake-girls.fire"
+      event_data:
+        weekday: true
+    - delay: 3600
+    - event: "pj.wake-girls.teardown"
+      event_data:
+        weekday: true
+
+- id: wake-girls-weekend
+  alias: Wake up the girls during the weekend
+  trigger:
+  - platform: template
+    value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls_weekend.attributes.timestamp | int - 900) | timestamp_custom('%H:%M', False)) }}"
+  condition:
+    condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: "off"
+  action: *wake_actions
+
+- id: wake-girls-prepare
+  trigger:
+    - platform: event
+      event_type: "pj.wake-girls.prepare"
+  action:
+  - service: scene.create
+    data:
+      scene_id: "girls_before_wake"
+      snapshot_entities:
+        - group.lights_dollhousefran
+        - group.lights_dollhouseroos
+        - group.switches_girls
+  - service: script.wake_up
+    data:
+      dollhouse_entity: light.dollhousefran
+      color_name: "DeepPink"
+      brightness: 100
+      delay: 300
+  - service: script.wake_up
+    data:
+      dollhouse_entity: light.dollhouseroos
+      color_name: "DeepPink"
+      brightness: 100
+      delay: 300
+
+- id: wake-girls-now
+  trigger:
+    - platform: event
+      event_type: "pj.wake-girls.fire"
   action:
   - service: homeassistant.turn_on
     entity_id: group.switches_girls
-  - delay: 01:00:00
+
+- id: wake-girls-after
+  trigger:
+    - platform: event
+      event_type: "pj.wake-girls.fire"
+  action:
   - service: homeassistant.turn_off
     entity_id: group.switches_girls
+  - service: scene.turn_on
+    target:
+      entity_id: scene.girls_before_wake
+  - service: light.turn_off
+    entity_id:
+      - light.dollhouse_roos
+      - light.dollhouse_fran
