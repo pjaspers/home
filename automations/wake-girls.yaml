@@ -51,6 +51,10 @@
       color_name: "DeepPink"
       brightness: 100
       delay: 300
+  - service: light.turn_off
+    entity_id:
+      - light.dollhouse_roos
+      - light.dollhouse_fran
   - service: script.wake_up
     data:
       dollhouse_entity: light.dollhouseroos
@@ -69,7 +73,7 @@
 - id: wake-girls-after
   trigger:
     - platform: event
-      event_type: "pj.wake-girls.fire"
+      event_type: "pj.wake-girls.teardown"
   action:
   - service: homeassistant.turn_off
     entity_id: group.switches_girls
