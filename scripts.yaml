@@ -113,7 +113,7 @@ wake_up:
       data:
         brightness_pct: "{{ brightness }}"
         transition: 2
-        color_name: "orange"
+        color_name: "darkorange"
     - delay:
         seconds: "{{ delay }}"
     - alias: "Third floor"
@@ -126,7 +126,7 @@ wake_up:
       data:
         brightness_pct: "{{ brightness }}"
         transition: 2
-        color_name: "springgreen"
+        color_name: "darkorange"
     - delay:
         seconds: "{{ delay }}"
     - alias: "Full house"
@@ -140,4 +140,16 @@ wake_up:
       data:
         brightness_pct: "{{ brightness }}"
         transition: 2
-        color_name: "springgreen"
+        color_name: "darkorange"
+    - alias: "Full house"
+      service: light.turn_on
+      target:
+        entity_id:
+          - "{{ dollhouse_entity }}_segment_1"
+          - "{{ dollhouse_entity }}_segment_2"
+          - "{{ dollhouse_entity }}_segment_3"
+          - "{{ dollhouse_entity }}_segment_4"
+      data:
+        brightness_pct: "{{ brightness }}"
+        transition: 2
+        color_name: "forestgreen"
