@@ -92,7 +92,7 @@ wakeup:
           step: 1
           unit_of_measurement: seconds
           mode: slider
-  mode: restart
+  mode: parallel
   sequence:
     - alias: "First floor"
       service: light.turn_on
