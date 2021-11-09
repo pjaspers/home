@@ -101,32 +101,30 @@ wakeup:
       data:
         brightness_pct: "{{ brightness }}"
         transition: 2
-        color_name: "{{ color_name }}"
+        color_name: "orangered"
     - delay:
         seconds: "{{ delay }}"
     - alias: "Second floor"
       service: light.turn_on
       target:
-        entity_id: "{{ dollhouse_entity }}_segment_2"
+        entity_id:
+          - "{{ dollhouse_entity }}_segment_1"
+          - "{{ dollhouse_entity }}_segment_2"
       data:
         brightness_pct: "{{ brightness }}"
         transition: 2
-        color_name: "{{ color_name }}"
+        color_name: "orange"
     - delay:
         seconds: "{{ delay }}"
     - alias: "Third floor"
       service: light.turn_on
       target:
-        entity_id: "{{ dollhouse_entity }}_segment_3"
+        entity_id:
+          - "{{ dollhouse_entity }}_segment_1"
+          - "{{ dollhouse_entity }}_segment_2"
+          - "{{ dollhouse_entity }}_segment_3"
+          - "{{ dollhouse_entity }}_segment_4"
       data:
         brightness_pct: "{{ brightness }}"
         transition: 2
-        color_name: "{{ color_name }}"
-    - alias: "Attic"
-      service: light.turn_on
-      target:
-        entity_id: "{{ dollhouse_entity }}_segment_4"
-      data:
-        brightness_pct: "{{ brightness }}"
-        transition: 2
-        color_name: "{{ color_name }}"
+        color_name: "springgreen"
