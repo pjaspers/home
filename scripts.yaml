@@ -49,7 +49,7 @@ sync_tado_office:
         title: SYNCHRONIZE TADO
   mode: single
 
-wakeup:
+wake_up:
   alias: "Wake Up"
   icon: "mdi:party-popper"
   description: "Turns on doll house floor per floor"
