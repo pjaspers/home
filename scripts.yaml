@@ -123,6 +123,19 @@ wake_up:
           - "{{ dollhouse_entity }}_segment_1"
           - "{{ dollhouse_entity }}_segment_2"
           - "{{ dollhouse_entity }}_segment_3"
+      data:
+        brightness_pct: "{{ brightness }}"
+        transition: 2
+        color_name: "springgreen"
+    - delay:
+        seconds: "{{ delay }}"
+    - alias: "Full house"
+      service: light.turn_on
+      target:
+        entity_id:
+          - "{{ dollhouse_entity }}_segment_1"
+          - "{{ dollhouse_entity }}_segment_2"
+          - "{{ dollhouse_entity }}_segment_3"
           - "{{ dollhouse_entity }}_segment_4"
       data:
         brightness_pct: "{{ brightness }}"
