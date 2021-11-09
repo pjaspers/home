@@ -107,7 +107,7 @@ wake_up:
         transition: 2
         color_name: "firebrick"
     - delay:
-        seconds: 1
+        seconds: 2
     - alias: "First floor"
       service: light.turn_on
       target:
@@ -145,6 +145,8 @@ wake_up:
       data:
         brightness_pct: "{{ brightness }}"
         color_name: "darkorange"
+    - delay:
+        seconds: 2
     - alias: "Full house"
       service: light.turn_on
       target:
