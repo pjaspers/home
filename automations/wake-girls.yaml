@@ -49,18 +49,24 @@
     entity_id:
       - light.dollhouse_roos
       - light.dollhouse_fran
-  - service: script.wake_up
+  - service: script.turn_on
+    target:
+      entity_id: script.wake_up
     data:
-      dollhouse_entity: light.dollhousefran
-      color_name: "DeepPink"
-      brightness: 100
-      delay: 300
-  - service: script.wake_up
+      variables:
+        dollhouse_entity: light.dollhousefran
+        color_name: "DeepPink"
+        brightness: 100
+        delay: 300
+  - service: script.turn_on
+    target:
+      entity_id: script.wake_up
     data:
-      dollhouse_entity: light.dollhouseroos
-      color_name: "DeepPink"
-      brightness: 100
-      delay: 300
+      variables:
+        dollhouse_entity: light.dollhouseroos
+        color_name: "DeepPink"
+        brightness: 100
+        delay: 300
 
 - id: wake-girls-now
   trigger:
