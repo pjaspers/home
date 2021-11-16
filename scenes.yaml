@@ -46,3 +46,9 @@
       color_name: red
     light.grote_kast_lamp:
       state: "on"
+    light.dollhouse_roos:
+      state: "on"
+      brightness: 20
+    light.dollhouse_fran:
+      state: "on"
+      brightness: 20
