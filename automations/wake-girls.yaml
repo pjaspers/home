@@ -86,6 +86,7 @@
   - service: scene.turn_on
     target:
       entity_id: scene.girls_before_wake
+  - delay: 20
   - service: light.turn_off
     entity_id:
       - light.dollhouse_roos
