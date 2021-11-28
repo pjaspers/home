@@ -42,8 +42,8 @@
       brightness: 100
     light.badkamer_hal:
       state: "on"
-      brightness: 50
-      color_name: red
+      brightness: 200
+      color_name: gold
     light.grote_kast_lamp:
       state: "on"
     light.dollhouse_roos:
