@@ -48,7 +48,9 @@
       state: "on"
     light.dollhouse_roos:
       state: "on"
-      brightness: 20
+      brightness_pct: 20
+      rgb_color: [255,0,190]
     light.dollhouse_fran:
       state: "on"
-      brightness: 20
+      brightness_pct: 20
+      rgb_color: [255,215,96]
