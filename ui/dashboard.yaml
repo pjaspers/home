@@ -229,6 +229,18 @@ views:
           - light.color_light_11
         title: Zolder
         type: entities
+  - title: Buiten
+    path: buiten
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: light
+          entity: light.buiten
+        - show_current: true
+          show_forecast: true
+          type: weather-forecast
+          entity: weather.home
   - title: Kelder
     path: kelder
     badges: []
