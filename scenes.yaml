@@ -16,14 +16,14 @@
     light.kleine_rode_lamp:
       state: "on"
       brightness: 100
-    light.hal_voordeur:
+    light.hal:
       state: "on"
       brightness: 100
     light.badkamer_hal:
       state: "on"
       brightness: 200
       color_name: gold
-    light.grote_kast_lamp:
+    light.grote_kast:
       state: "on"
 
 - name: Sunset
@@ -37,14 +37,14 @@
     light.kleine_rode_lamp:
       state: "on"
       brightness: 100
-    light.hal_voordeur:
+    light.hal:
       state: "on"
       brightness: 100
     light.badkamer_hal:
       state: "on"
       brightness: 200
       color_name: gold
-    light.grote_kast_lamp:
+    light.grote_kast:
       state: "on"
     light.dollhouse_roos:
       state: "on"

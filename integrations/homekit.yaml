@@ -6,9 +6,9 @@ filter:
       - light.radiolamp
       - light.kleine_rode_lamp
       - light.bureau
-      - light.grote_kast_lamp
-      - light.hal_voordeur
-      - light.buitenlamp
+      - light.grote_kast
+      - light.hal
+      - light.buiten
       - switch.fran_stopcontact
       - switch.roos_stopcontact
       - switch.kelder_stopcontact

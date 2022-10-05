@@ -10,9 +10,9 @@ lights_ground_floor:
     - light.stalamp
     - light.radiolamp
     - light.kleine_rode_lamp
-    - light.hal_voordeur
-    - light.grote_kast_lamp
-    - light.buitenlamp
+    - light.hal
+    - light.grote_kast
+    - light.buiten
     - switch.kelder_stopcontact
 
 lights_first_floor:
@@ -39,7 +39,7 @@ switches_ground_floor:
 lights_hall:
   name: All lights in the hallway
   entities:
-    - light.hal_voordeur
+    - light.hal
     - light.badkamer_hal
 
 lights_dollhousefran:
