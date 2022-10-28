@@ -14,3 +14,11 @@
     - light.dollhousefran_segment_2
     - light.dollhousefran_segment_3
     - light.dollhousefran_segment_4
+- platform: group
+  name: Bedroom lights
+  unique_id: bedroom_homekit
+  entities:
+    - light.slaapkamer.one
+    - light.slaapkamer.two
+    - light.slaapkamer.three
+    - light.slaapkamer.four

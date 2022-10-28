@@ -42,6 +42,7 @@ views:
               - entity: group.lights_first_floor
               - entity: group.lights_hall
               - entity: group.lights_attic
+              - entity: group.lights_bedroom
             title: Lampen
             type: entities
           - entity: weather.home

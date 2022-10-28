@@ -57,3 +57,11 @@ lights_dollhouseroos:
     - light.dollhouseroos_segment_2
     - light.dollhouseroos_segment_3
     - light.dollhouseroos_segment_4
+
+lights_bedroom:
+  name: Bedroom
+  entities:
+    - light.slaapkamer.one
+    - light.slaapkamer.two
+    - light.slaapkamer.three
+    - light.slaapkamer.four
