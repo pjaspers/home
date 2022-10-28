@@ -61,7 +61,7 @@ lights_dollhouseroos:
 lights_bedroom:
   name: Bedroom
   entities:
-    - light.slaapkamer.one
-    - light.slaapkamer.two
-    - light.slaapkamer.three
-    - light.slaapkamer.four
+    - light.dimmable_light_12
+    - light.dimmable_light_13
+    - light.dimmable_light_14
+    - light.dimmable_light_15
