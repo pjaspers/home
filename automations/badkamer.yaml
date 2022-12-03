@@ -27,9 +27,9 @@
         event: 1002
   condition: []
   action:
-    - type: turn_on
+  - service: homeassistant.turn_on
+    data:
       entity_id: light.badkamer
-      domain: light
   mode: single
 - id: "badkamer_remote_off"
   alias: "Strybar: Badkamerlicht uit"
@@ -42,9 +42,9 @@
         event: 2002
   condition: []
   action:
-    - type: turn_on
+  - service: homeassistant.turn_off
+    data:
       entity_id: light.badkamer
-      domain: light
   mode: single
 - id: "poezenfontein_on"
   alias: "Strybar: poezenfontein aan"
