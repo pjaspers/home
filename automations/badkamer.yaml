@@ -1,0 +1,43 @@
+- id: "badkamer_remote_on"
+  description: "Badkamer licht aan met afstandsbediening"
+  trigger:
+    - device_id: f52100606916f937f1806f91bcb64c77
+      domain: deconz
+      platform: device
+      type: remote_button_short_release
+      subtype: turn_on
+  condition: []
+  action:
+    - type: turn_on
+      device_id: db2a972bd423186c53124a85658f9b86
+      entity_id: light.badkamer
+      domain: light
+  mode: single
+- id: "badkamer_remote_off"
+  description: "Badkamer licht uit met afstandsbediening"
+  trigger:
+    - device_id: f52100606916f937f1806f91bcb64c77
+      domain: deconz
+      platform: device
+      type: remote_button_short_release
+      subtype: turn_off
+  condition: []
+  action:
+    - type: turn_off
+      device_id: db2a972bd423186c53124a85658f9b86
+      entity_id: light.badkamer
+      domain: light
+  mode: single
+- id: "poezenfontein"
+  alias: Turn off poezenfontein after 5 minutes of Franz drinking
+  trigger:
+  - platform: state
+    entity_id: switch.kerstboom_stopcontact
+    from: "off"
+    to: "on"
+    for:
+      minutes: 5
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.kerstboom_stopcontact
