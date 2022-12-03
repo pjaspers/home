@@ -42,7 +42,7 @@
         event: 2002
   condition: []
   action:
-  - service: homeassistant.turn_off
+  - service: homeassistant.toggle
     data:
       entity_id: light.badkamer
   mode: single
@@ -57,7 +57,7 @@
         event: 3002
   condition: []
   action:
-  - service: homeassistant.turn_on
+  - service: homeassistant.toggle
     data:
       entity_id: switch.kerstboom_stopcontact
   mode: single
@@ -72,7 +72,7 @@
         event: 4002
   condition: []
   action:
-  - service: homeassistant.turn_off
+  - service: homeassistant.toggle
     data:
       entity_id: switch.kerstboom_stopcontact
   mode: single
@@ -87,6 +87,6 @@
     for:
       minutes: 5
   action:
-  - service: homeassistant.turn_off
+  - service: homeassistant.toggle
     data:
       entity_id: switch.kerstboom_stopcontact
