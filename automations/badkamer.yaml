@@ -1,32 +1,76 @@
+# https://dresden-elektronik.github.io/deconz-rest-doc/endpoints/sensors/button_events/
+#
+# 1002	Short release	Dim Up
+# 1001	Hold	Dim Up
+# 1003	Long release	Dim Up
+# 2002	Short release	Dim Down
+# 2001	Hold	Dim Down
+# 2003	Long release	Dim Down
+# 3002	Short release	Previous Scene
+# 3001	Hold	Previous Scene
+# 3003	Long release	Previous Scene
+# 4002	Short release	Next Scene
+# 4001	Hold	Next Scene
+# 4003	Long release	Next Scene
+#
+# Developer tools listen for deconz_event
+# https://github.com/home-assistant/core/blob/3a13ffcf1376bafff6a32df19b197083abf6e826/homeassistant/components/deconz/device_trigger.py but they've got the id's wrong somehow
+#
 - id: "badkamer_remote_on"
   description: "Badkamer licht aan met afstandsbediening"
   trigger:
-    - device_id: f52100606916f937f1806f91bcb64c77
-      domain: deconz
-      platform: device
-      type: remote_button_short_release
-      subtype: turn_on
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: strybar
+        event: 1002
   condition: []
   action:
     - type: turn_on
-      device_id: db2a972bd423186c53124a85658f9b86
       entity_id: light.badkamer
       domain: light
   mode: single
-- id: "badkamer_remote_off"
-  description: "Badkamer licht uit met afstandsbediening"
+- id: "badkamer_remote_on"
+  description: "Badkamer licht aan met afstandsbediening"
   trigger:
-    - device_id: f52100606916f937f1806f91bcb64c77
-      domain: deconz
-      platform: device
-      type: remote_button_short_release
-      subtype: turn_off
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: strybar
+        event: 2002
   condition: []
   action:
-    - type: turn_off
-      device_id: db2a972bd423186c53124a85658f9b86
+    - type: turn_on
       entity_id: light.badkamer
       domain: light
+  mode: single
+- id: "poezenfontein_on"
+  description: "Poezenfontein aan met afstandsbediening"
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: strybar
+        event: 3002
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.kerstboom_stopcontact
+  mode: single
+- id: "poezenfontein_off"
+  description: "Poezenfontein uit met afstandsbediening"
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: strybar
+        event: 4002
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: switch.kerstboom_stopcontact
   mode: single
 - id: "poezenfontein"
   alias: Turn off poezenfontein after 5 minutes of Franz drinking
