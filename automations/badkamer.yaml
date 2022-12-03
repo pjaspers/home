@@ -78,7 +78,7 @@
   mode: single
 - id: "poezenfontein"
   alias: Turn off poezenfontein after 5 minutes of Franz drinking
-  descripton: "Turn off poezenfontein after 5 minutes of Franz drinking"
+  description: "Turn off poezenfontein after 5 minutes of Franz drinking"
   trigger:
   - platform: state
     entity_id: switch.kerstboom_stopcontact
