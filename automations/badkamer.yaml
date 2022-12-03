@@ -17,6 +17,7 @@
 # https://github.com/home-assistant/core/blob/3a13ffcf1376bafff6a32df19b197083abf6e826/homeassistant/components/deconz/device_trigger.py but they've got the id's wrong somehow
 #
 - id: "badkamer_remote_on"
+  alias: "Strybar: Badkamerlicht aan"
   description: "Badkamer licht aan met afstandsbediening"
   trigger:
     - platform: event
@@ -31,7 +32,8 @@
       domain: light
   mode: single
 - id: "badkamer_remote_on"
-  description: "Badkamer licht aan met afstandsbediening"
+  alias: "Strybar: Badkamerlicht uit"
+  description: "Badkamer licht uit met afstandsbediening"
   trigger:
     - platform: event
       event_type: deconz_event
@@ -45,6 +47,7 @@
       domain: light
   mode: single
 - id: "poezenfontein_on"
+  alias: "Strybar: poezenfontein aan"
   description: "Poezenfontein aan met afstandsbediening"
   trigger:
     - platform: event
@@ -59,6 +62,7 @@
       entity_id: switch.kerstboom_stopcontact
   mode: single
 - id: "poezenfontein_off"
+  alias: "Strybar: poezenfontein uit"
   description: "Poezenfontein uit met afstandsbediening"
   trigger:
     - platform: event
@@ -74,6 +78,7 @@
   mode: single
 - id: "poezenfontein"
   alias: Turn off poezenfontein after 5 minutes of Franz drinking
+  descripton: "Turn off poezenfontein after 5 minutes of Franz drinking"
   trigger:
   - platform: state
     entity_id: switch.kerstboom_stopcontact

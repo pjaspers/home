@@ -34,6 +34,7 @@
   action: *wake_actions
 
 - id: wake-girls-prepare
+  alias: "Wake girls prepare"
   trigger:
     - platform: event
       event_type: "pj.wake-girls.prepare"
@@ -69,6 +70,7 @@
         delay: 300
 
 - id: wake-girls-now
+  alias: "Wake girls now"
   trigger:
     - platform: event
       event_type: "pj.wake-girls.fire"
@@ -77,6 +79,7 @@
     entity_id: group.switches_girls
 
 - id: wake-girls-after
+  alias: "Wake girls after"
   trigger:
     - platform: event
       event_type: "pj.wake-girls.teardown"
