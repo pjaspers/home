@@ -22,9 +22,14 @@ tts:
 discovery:
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automations
+automation: !include automations.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
+
+# https://www.home-assistant.io/docs/automation/yaml/
+automation badkamer: !include automations/badkamer.yaml
+automation rest: !include automations/rest.yaml
+automation girls: !include automations/wake-girls.yaml
 
 # Integrations
 input_datetime: !include integrations/input_datetime.yaml
