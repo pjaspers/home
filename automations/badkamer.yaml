@@ -31,7 +31,7 @@
       entity_id: light.badkamer
       domain: light
   mode: single
-- id: "badkamer_remote_on"
+- id: "badkamer_remote_off"
   alias: "Strybar: Badkamerlicht uit"
   description: "Badkamer licht uit met afstandsbediening"
   trigger:
