@@ -27,7 +27,7 @@
         event: 1002
   condition: []
   action:
-  - service: homeassistant.turn_on
+  - service: homeassistant.toggle
     data:
       entity_id: light.badkamer
   mode: single
