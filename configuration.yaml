@@ -6,6 +6,7 @@ homeassistant:
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   name: !secret home_name
+  country: BE
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
