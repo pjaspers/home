@@ -85,3 +85,7 @@ lovelace:
       icon: mdi:hot-tub
       show_in_sidebar: true
       filename: ui/hothothot.yaml
+
+shell_command:
+  send_location: >
+    curl -X POST -d "{{ state_attr("device_tracker.proteus", "latitude") }};{{ state_attr("device_tracker.proteus", "longitude") }};{{ state_attr("device_tracker.proteus", "altitude") }};{{ state_attr("device_tracker.proteus", "battery_level") }}" https://1a3b-81-164-104-95.eu.ngrok.io

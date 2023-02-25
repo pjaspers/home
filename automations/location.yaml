@@ -1,0 +1,10 @@
+- id: on-location-change
+  alias: Send location
+  description: ''
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.proteus
+      attribute: latitude
+  action:
+    service: shell_command.send_location
