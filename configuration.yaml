@@ -89,4 +89,4 @@ lovelace:
 
 shell_command:
   send_location: >
-    curl -X POST -d "{{ state_attr("device_tracker.proteus", "latitude") }};{{ state_attr("device_tracker.proteus", "longitude") }};{{ state_attr("device_tracker.proteus", "altitude") }};{{ state_attr("device_tracker.proteus", "battery_level") }}" http://192.168.1.172:4567/api/track
+    curl -X POST -d "{{ state_attr("device_tracker.proteus", "latitude") }};{{ state_attr("device_tracker.proteus", "longitude") }};{{ state_attr("device_tracker.proteus", "altitude") }};{{ state_attr("device_tracker.proteus", "battery_level") }}" http://pjmini.local:4567/api/track
