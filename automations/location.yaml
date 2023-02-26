@@ -4,7 +4,7 @@
   trigger:
     - platform: state
       entity_id:
-        - device_tracker.proteus
+        - device_tracker.oranje
       attribute: latitude
   action:
     service: shell_command.send_location
