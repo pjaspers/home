@@ -19,9 +19,6 @@ default_config:
 tts:
   - platform: google_translate
 
-# Discovery addon https://www.home-assistant.io/integrations/discovery/
-discovery:
-
 group: !include groups.yaml
 automation: !include automations.yaml
 scene: !include scenes.yaml
