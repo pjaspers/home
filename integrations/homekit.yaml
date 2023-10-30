@@ -9,6 +9,7 @@ filter:
       - light.grote_kast
       - light.hal
       - light.buiten
+      - light.luster
       - switch.fran_stopcontact
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
