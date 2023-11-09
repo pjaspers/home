@@ -24,3 +24,4 @@ filter:
       - climate.roos
       - light.dollhouse_roos_homekit
       - light.dollhouse_fran_homekit
+      - light.bedroom_lights
