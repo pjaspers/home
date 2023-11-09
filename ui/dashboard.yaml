@@ -119,7 +119,7 @@ views:
             cards:
               - entities:
                   - entity: switch.fran_stopcontact
-                  - entity: group.lights_dollhousefran
+                  - entity: light.dollhouse_fran
                 title: Fran
                 type: entities
               - type: glance
