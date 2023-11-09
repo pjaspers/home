@@ -1,3 +1,4 @@
+# Makes light.dollhouse_roos
 - platform: group
   name: Dollhouse Roos
   unique_id: roos_dollhouse_homekit
@@ -6,6 +7,7 @@
     - light.dollhouseroos_segment_2
     - light.dollhouseroos_segment_3
     - light.dollhouseroos_segment_4
+# Makes light.dollhouse_fran
 - platform: group
   name: Dollhouse Fran
   unique_id: fran_dollhouse_homekit
@@ -14,6 +16,7 @@
     - light.dollhousefran_segment_2
     - light.dollhousefran_segment_3
     - light.dollhousefran_segment_4
+# Makes light.bedroom_lights
 - platform: group
   name: Bedroom lights
   unique_id: bedroom_homekit

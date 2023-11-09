@@ -43,13 +43,13 @@
     data:
       scene_id: "girls_before_wake"
       snapshot_entities:
-        - group.lights_dollhousefran
-        - group.lights_dollhouseroos
+        - light.dollhousefran
+        - light.dollhouseroos
         - group.switches_girls
   - service: light.turn_off
     entity_id:
-      - light.dollhouse_roos
-      - light.dollhouse_fran
+      - light.dollhouseroos
+      - light.dollhousefran
   - service: script.turn_on
     target:
       entity_id: script.wake_up
@@ -92,5 +92,5 @@
   - delay: 20
   - service: light.turn_off
     entity_id:
-      - light.dollhouse_roos
-      - light.dollhouse_fran
+      - light.dollhouseroos
+      - light.dollhousefran
