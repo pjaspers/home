@@ -90,3 +90,33 @@
   - service: homeassistant.toggle
     data:
       entity_id: switch.kerstboom_stopcontact
+- id: "elf_remote_on"
+  alias: "Elf: Christmas on"
+  description: "Kerstboom aan"
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: elf
+        event: 1002
+  condition: []
+  action:
+  - service: homeassistant.toggle
+    data:
+      entity_id: switch.roos_stopcontact
+  mode: single
+- id: "elf_remote_off"
+  alias: "Elf: Christmas off"
+  description: "Kerstboom uit"
+  trigger:
+    - platform: event
+      event_type: deconz_event
+      event_data:
+        id: elf
+        event: 2002
+  condition: []
+  action:
+  - service: homeassistant.toggle
+    data:
+      entity_id: switch.roos_stopcontact
+  mode: single
