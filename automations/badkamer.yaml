@@ -113,7 +113,7 @@
       event_type: deconz_event
       event_data:
         id: elf
-        event: 2002
+        event: 3002
   condition: []
   action:
   - service: homeassistant.toggle
