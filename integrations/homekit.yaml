@@ -14,6 +14,7 @@ filter:
       - switch.roos_stopcontact
       - switch.kelder_stopcontact
       - switch.kerstboom_stopcontact
+      - switch.garage
       - climate.keuken
       - climate.goei_kamer
       - climate.living
