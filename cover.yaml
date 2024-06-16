@@ -1,6 +1,7 @@
 - platform: template
   covers:
     garage_door:
+      unique_id: "garage_door_cover"
       device_class: garage
       friendly_name: "Garage Door"
       value_template: >-
