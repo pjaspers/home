@@ -7,7 +7,7 @@ I used to run this on a Synology using this: https://community.home-assistant.io
 - ODROID-N2+
 - 64gb eMMC
 
-I bought this Zigbee bridge: https://phoscon.de/en/conbee2, which is connected to the odroid (using an USB extenstion cord for better reception), and using the Deconz addon
+I bought this Zigbee bridge: https://phoscon.de/en/conbee2, which is connected to the odroid (using an USB extension cord for better reception), and using the Deconz addon
 
 
 
