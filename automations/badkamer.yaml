@@ -91,8 +91,8 @@
     data:
       entity_id: switch.kerstboom_stopcontact
 - id: "elf_remote_center"
-  alias: "Elf: Christmas on"
-  description: "Kerstboom aan"
+  alias: "Elf: toggle the gate"
+  description: "Garage deur"
   trigger:
     - platform: event
       event_type: deconz_event
@@ -101,13 +101,13 @@
         event: 1002
   condition: []
   action:
-  - service: homeassistant.toggle
+  - service: cover.toggle
     data:
-      entity_id: switch.roos_stopcontact
+      entity_id: cover.garage_door
   mode: single
 - id: "elf_remote_up"
-  alias: "Elf: Christmas on"
-  description: "Kerstboom aan"
+  alias: "Elf: Open the gate"
+  description: "Garage toe"
   trigger:
     - platform: event
       event_type: deconz_event
@@ -116,13 +116,13 @@
         event: 2002
   condition: []
   action:
-  - service: homeassistant.toggle
+  - service: cover.open_cover
     data:
-      entity_id: switch.roos_stopcontact
+      entity_id: cover.garage_door
   mode: single
 - id: "elf_remote_down"
-  alias: "Elf: Christmas off"
-  description: "Kerstboom uit"
+  alias: "Elf: Lower the gate"
+  description: "Garage open"
   trigger:
     - platform: event
       event_type: deconz_event
@@ -131,7 +131,7 @@
         event: 3002
   condition: []
   action:
-  - service: homeassistant.toggle
+  - service: cover.close_cover
     data:
-      entity_id: switch.roos_stopcontact
+      entity_id: cover.garage_door
   mode: single
