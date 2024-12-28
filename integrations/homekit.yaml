@@ -7,8 +7,8 @@ filter:
       - light.kleine_rode_lamp
       - light.bureau
       - light.grote_kast
-      - light.hal
-      - light.buiten
+      - light.shelly_switch_hal
+      - light.shelly_buiten_dimmer
       - light.luster
       - switch.kelder_stopcontact
       - switch.kerstboom_stopcontact

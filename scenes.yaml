@@ -16,7 +16,7 @@
     light.kleine_rode_lamp:
       state: "on"
       brightness: 100
-    light.hal:
+    light.shelly_switch_hal:
       state: "on"
       brightness: 100
     light.badkamer_hal:
@@ -37,7 +37,7 @@
     light.kleine_rode_lamp:
       state: "on"
       brightness: 100
-    light.hal:
+    light.shelly_switch_hal:
       state: "on"
       brightness: 100
     light.badkamer_hal:

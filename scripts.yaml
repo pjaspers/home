@@ -6,7 +6,7 @@ turn_off_downstairs:
           - light.stalamp
           - light.radiolamp
           - light.kleine_rode_lamp
-          - light.hal
+          - light.shelly_switch_hal
           - light.grote_kast
         transition: 5
     - delay: 5
@@ -23,7 +23,7 @@ turn_on_downstairs:
           - light.stalamp
           - light.radiolamp
           - light.kleine_rode_lamp
-          - light.hal
+          - light.shelly_switch_hal
           - light.grote_kast
         transition: 5
         brightness: 200

@@ -197,7 +197,7 @@ views:
         title: Hal badkamer
         type: entities
       - entities:
-          - light.hal
+          - light.shelly_switch_hal
         title: Hal onder
         type: entities
   - title: Badkamer
@@ -237,7 +237,7 @@ views:
       - type: vertical-stack
         cards:
         - type: light
-          entity: light.buiten
+          entity: light.shelly_buiten_dimmer
         - show_current: true
           show_forecast: true
           type: weather-forecast
