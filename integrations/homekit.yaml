@@ -25,3 +25,4 @@ filter:
       - light.dollhouse_roos
       - light.bedroom_lights
       - light.living_spots
+      - script.such_lights
