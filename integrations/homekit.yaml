@@ -24,5 +24,7 @@ filter:
       - light.dollhouse_fran
       - light.dollhouse_roos
       - light.bedroom_lights
-      - light.living_spots
+      - light.living-all-spots
+      - light.living-front-spots
+      - light.living-back-spots
       - script.such_lights
