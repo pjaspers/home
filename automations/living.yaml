@@ -1,14 +1,13 @@
 - id: "living_front_spots_on"
   alias: "Schakelaar voor voorste spotjes"
   description: "Spotjes rij 1 tot 3"
-  triggers:
-    - trigger: state
+  trigger:
+    - platform: state
       entity_id:
         - switch.shelly_living_front_spots_switch_0
-  conditions: []
-  actions:
-    - action: light.toggle
+  action:
+    - service: light.toggle
       metadata: {}
-      target:
+      data:
         entity_id: light.living_spots
   mode: single
