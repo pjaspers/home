@@ -34,6 +34,7 @@ automation badkamer: !include automations/badkamer.yaml
 automation rest: !include automations/rest.yaml
 automation girls: !include automations/wake-girls.yaml
 automation location: !include automations/location.yaml
+automation living: !include automations/living.yaml
 
 # Integrations
 input_datetime: !include integrations/input_datetime.yaml
