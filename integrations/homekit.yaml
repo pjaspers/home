@@ -23,7 +23,6 @@ filter:
       - climate.roos
       - light.dollhouse_fran
       - light.dollhouse_roos
-      - light.bedroom_lights
       - light.living_all_spots
       - light.living_back_spots
       - light.living_spots
