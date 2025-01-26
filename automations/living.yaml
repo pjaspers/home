@@ -11,4 +11,4 @@
       metadata: {}
       target:
         entity_id: light.living_spots
-mode: single
+  mode: single
