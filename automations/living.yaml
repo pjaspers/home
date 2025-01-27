@@ -11,3 +11,15 @@
       data:
         entity_id: light.living_spots
   mode: single
+
+- id: "living spots a"
+  alias: "Shakelaar voor voorste spotjes"
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.living_spots_a_switch_0
+  action:
+    - service: light.toggle
+      data:
+        entity_id: light.living_spots
+  mode: single
