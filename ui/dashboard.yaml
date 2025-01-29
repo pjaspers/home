@@ -99,6 +99,76 @@ views:
               - entity: sensor.awair_temperature
             hours_to_show: 24
             refresh_interval: 0
+  - type: masonry
+    path: living
+    title: Living
+    cards:
+      - type: entities
+        entities:
+          - entity: light.shelly1minig3_dcda0ce5de30_switch_0
+            name: "Wandlampen"
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: light.living_spots
+                name: TV-spots
+          - type: entities
+            entities:
+              - entity: light.living_back_spots
+                name: Tafel-spots
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_19
+                    name: 1a
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_23
+                    name: 1b
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_24
+                    name: 2a
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_20
+                    name: 2b
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_22
+                    name: 3a
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_18
+                    name: 3b
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_25
+                    name: 4a
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_15
+                    name: 4b
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_21
+                    name: 5a
+              - type: entities
+                entities:
+                  - entity: light.dimmable_light_26
+                    name: 5b
   - title: Roos & Fran
     path: roos_en_fran
     badges: []
