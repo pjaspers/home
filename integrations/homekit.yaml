@@ -27,3 +27,4 @@ filter:
       - light.living_back_spots
       - light.living_spots
       - script.such_lights
+      - lock.nuki
