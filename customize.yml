@@ -41,3 +41,27 @@ switch.roos_stopcontact:
 switch.kerstboom_stopcontact:
   icon: mdi:fountain
   friendly_name: Poezenfontein
+
+# Fucking tados
+binary_sensor.ru2896958720_battery_state:
+  friendly_name: Thermostaat
+binary_sensor.va0697441024_battery_state:
+  friendly_name: Living Raamkant
+binary_sensor.va0461380352_battery_state:
+  friendly_name: Badkamer
+binary_sensor.va0562043648_battery_state:
+  friendly_name: Keuken
+binary_sensor.va0647109376_battery_state:
+  friendly_name: Goei kamer
+binary_sensor.va0897587968_battery_state:
+  friendly_name: Bureau
+binary_sensor.va1402084096_battery_state:
+  friendly_name: Keuken Again
+binary_sensor.va1737628416_battery_state:
+  friendly_name: Living Muurkant
+binary_sensor.va1754012416_battery_state:
+  friendly_name: Roos
+binary_sensor.va1921784576_battery_state:
+  friendly_name: Fran
+binary_sensor.va3362462464_battery_state:
+  friendly_name: Slaapkamer
