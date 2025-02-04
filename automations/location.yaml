@@ -9,7 +9,8 @@
   action:
     service: shell_command.send_location
 
-- alias: "Arm the outside"
+- alias: "loc. Arm the outside"
+  id: arm-the-outside
   mode: single
   trigger:
     - platform: numeric_state
@@ -19,7 +20,8 @@
     - service: input_boolean.turn_on
       entity_id: input_boolean.pj_outside_zone
 
-- alias: "Returning home"
+- alias: "loc. Returning home"
+  id: returning-home
   mode: single
   condition:
     - condition: state
@@ -35,7 +37,8 @@
         title: You have returned within 100m
         message: Greetings!
 
-- alias: "Arrived home"
+- alias: "loc. Arrived home"
+  id: arrived-home
   mode: single
   condition:
     - condition: state
@@ -51,7 +54,8 @@
         title: You are in the zone
         message: Salutations!
 
-- alias: "Also home"
+- alias: "loc. Also home"
+  id: also-home
   mode: single
   condition:
     - condition: state
