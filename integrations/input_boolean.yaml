@@ -7,3 +7,7 @@ vacation_mode:
   name: Vacation Mode
   initial: off
   icon: mdi:airplane
+
+pj_outside_zone:
+  name: Helper to mark I'm away
+  initial: off

@@ -8,3 +8,61 @@
       attribute: latitude
   action:
     service: shell_command.send_location
+
+- alias: "Arm the outside"
+  mode: single
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.home_piet_distance
+      above: 200
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.pj_outside_zone
+
+- alias: "Returning home"
+  mode: single
+  condition:
+    - condition: state
+      entity_id: input_boolean.pj_outside_zone
+      state: "on"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.home_piet_distance
+      below: 100
+  action:
+    - service: notify.mobile_app_oranje
+      data:
+        title: You have returned within 100m
+        message: Greetings!
+
+- alias: "Arrived home"
+  mode: single
+  condition:
+    - condition: state
+      entity_id: input_boolean.pj_outside_zone
+      state: "on"
+  trigger:
+    - platform: state
+      entity_id: person.piet_jaspers
+      to: home
+  action:
+    - service: notify.mobile_app_oranje
+      data:
+        title: You are in the zone
+        message: Salutations!
+
+- alias: "Also home"
+  mode: single
+  condition:
+    - condition: state
+      entity_id: input_boolean.pj_outside_zone
+      state: "on"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.home_piet_distance
+      below: 2
+  action:
+    - service: notify.mobile_app_oranje
+      data:
+        title: You are at your doorstep
+        message: Salutations!
