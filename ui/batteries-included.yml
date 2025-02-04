@@ -1,122 +1,119 @@
-title: Batteries Included
 views:
-  - cards:
-    - type: sections
-      max_columns: 4
-      title: batteries
-      path: batteries
-      sections:
-        - type: grid
-          cards:
-            - type: heading
-              heading_style: title
-              heading: Tados
-              badges: []
-            - type: tile
-              entity: binary_sensor.va3362462464_battery_state
-              show_entity_picture: false
-              hide_state: false
-              vertical: false
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va1921784576_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va1754012416_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va1737628416_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va1402084096_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va0897587968_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va0647109376_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va0562043648_battery_state
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: binary_sensor.va0461380352_battery_state
-              state_content:
-                - last_updated
-                - state
-        - type: grid
-          cards:
-            - type: heading
-              heading_style: title
-              heading: Aqaras
-            - type: tile
-              entity: sensor.fran_battery_level
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.roos_battery_level
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.slaapkamer_battery_level
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.zolder_battery_level
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.office_sensor_battery_level
-              state_content:
-                - last_updated
-                - state
-        - type: grid
-          cards:
-            - type: heading
-              heading: Random
-              heading_style: title
-            - type: tile
-              entity: sensor.elf_battery
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.remote_control_n2_battery
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.tradfri_motion_sensor_battery_level
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.presence_2_battery_level
-              state_content:
-                - last_updated
-                - state
-            - type: tile
-              entity: sensor.nuki_battery
-              state_content:
-                - last_updated
-                - state
+  - title: Batteries Included
+    max_columns: 4
+    path: batteries
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Tados
+            badges: []
+          - type: tile
+            entity: binary_sensor.va3362462464_battery_state
+            show_entity_picture: false
+            hide_state: false
+            vertical: false
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va1921784576_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va1754012416_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va1737628416_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va1402084096_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va0897587968_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va0647109376_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va0562043648_battery_state
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: binary_sensor.va0461380352_battery_state
+            state_content:
+              - last_updated
+              - state
+      - type: grid
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Aqaras
+          - type: tile
+            entity: sensor.fran_battery_level
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.roos_battery_level
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.slaapkamer_battery_level
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.zolder_battery_level
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.office_sensor_battery_level
+            state_content:
+              - last_updated
+              - state
+      - type: grid
+        cards:
+          - type: heading
+            heading: Random
+            heading_style: title
+          - type: tile
+            entity: sensor.elf_battery
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.remote_control_n2_battery
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.tradfri_motion_sensor_battery_level
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.presence_2_battery_level
+            state_content:
+              - last_updated
+              - state
+          - type: tile
+            entity: sensor.nuki_battery
+            state_content:
+              - last_updated
+              - state
