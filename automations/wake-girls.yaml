@@ -1,17 +1,17 @@
 # Set up the triggers
 #
-x-actions:
-  - event: "pj.wake-girls.prepare"
-    event_data:
-      weekday: true
-  - delay: 10
-  - event: "pj.wake-girls.fire"
-    event_data:
-      weekday: true
-  - delay: 3600
-  - event: "pj.wake-girls.teardown"
-    event_data:
-      weekday: true
+- x-actions: &wake_actions
+    - event: "pj.wake-girls.prepare"
+      event_data:
+        weekday: true
+    - delay: 10
+    - event: "pj.wake-girls.fire"
+      event_data:
+        weekday: true
+    - delay: 3600
+    - event: "pj.wake-girls.teardown"
+      event_data:
+        weekday: true
 
 - id: wake-girls-weekdays
   alias: Wake up the girls during the week
