@@ -49,6 +49,7 @@ sync_tado_office:
         title: SYNCHRONIZE TADO
   mode: single
 
+# Currenlty not in use
 wake_up:
   alias: "Wake Up"
   icon: "mdi:party-popper"
