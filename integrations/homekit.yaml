@@ -21,8 +21,8 @@ filter:
       - climate.slaapkamer
       - climate.fran
       - climate.roos
-      - light.dollhouse_fran
-      - light.dollhouse_roos
+      - light.dollhousefran
+      - light.wled_roos
       - light.living_all_spots
       - light.living_back_spots
       - light.living_spots
