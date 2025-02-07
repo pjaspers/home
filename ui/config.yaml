@@ -11,3 +11,5 @@ views:
           - input_datetime.alarm_clock_girls_weekend
           - input_boolean.party_mode
           - input_boolean.vacation_mode
+          - input.pj_outside_zone
+          - input.arm_the_automatic_garage_opener

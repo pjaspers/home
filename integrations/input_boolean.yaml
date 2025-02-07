@@ -9,5 +9,11 @@ vacation_mode:
   icon: mdi:airplane
 
 pj_outside_zone:
-  name: Helper to mark I'm away
+  name: Consider me outside of the zone
   initial: off
+  icon: mdi:radar
+
+arm_the_automatic_garage_opener:
+  name: Arm the Garage Opener 2000
+  initial: off
+  icon: mdi:verified

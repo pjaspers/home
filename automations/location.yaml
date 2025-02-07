@@ -19,6 +19,9 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.pj_outside_zone
+    - service: notify.mobile_app_oranje
+      data:
+        title: pjaspers has left the building
 
 - alias: "loc. Returning home"
   id: returning-home
@@ -53,6 +56,21 @@
       data:
         title: You are in the zone
         message: Salutations!
+    - event: "x-returned-home"
+
+- id: "x-returned-home"
+  alias: "Returning home"
+  trigger:
+    - platform: event
+      event_type: "x-returned-home"
+  condition:
+    - condition: state
+      entity_id: input_boolean.arm_the_automatic_garage_opener
+      state: "on"
+  action:
+    - service:  cover.open_cover
+      data:
+        entity_id: cover.garage_door
 
 - alias: "loc. Also home"
   id: also-home
