@@ -51,19 +51,22 @@
     - event: "x-returned-home"
     - service: input_boolean.turn_off
       data:
-        enitty_id: input_boolean.pj_outside_zone
+        entity_id: input_boolean.pj_outside_zone
 
 # Christine bericht sturen en mij bericht sturen
 - id: "x-returned-home"
   alias: "Returning home"
-  trigger:
-    - platform: event
-      event_type: "x-returned-home"
-  condition:
+  triggers:
+    - trigger: event
+      event_type: x-returned-home
+  conditions:
     - condition: state
       entity_id: input_boolean.arm_the_automatic_garage_opener
       state: "on"
-  action:
-    - service:  cover.open_cover
+  actions:
+    - action:  input_boolean.turn_off
+      data:
+        entity_id: input_boolean.arm_the_automatic_garage_opener
+    - action:  cover.open_cover
       data:
         entity_id: cover.garage_door
