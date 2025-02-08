@@ -1,34 +1,79 @@
-title: Thermostats
+title: Some like it hot
 views:
-  - badges:
-      - entity: sensor.keuken_temperature
-      - entity: sensor.living_temperature
-      - entity: sensor.goei_kamer_temperature
-
-      - entity: sensor.badkamer_temperature
-      - entity: sensor.office_sensor_temp
-      - entity: sensor.slaapkamer_temperature
-
-      - entity: sensor.temperature_fran
-      - entity: sensor.temperature_roos
-    cards:
+  - cards:
       - type: grid
         cards:
-          - entity: climate.keuken
-            type: thermostat
-          - entity: climate.living
-            type: thermostat
-          - entity: climate.goei_kamer
-            type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.keuken_temperature
+                  - binary_sensor.keuken_open_window
+              - entity: climate.keuken
+                type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.living_temperature
+                  - binary_sensor.living_open_window
+              - entity: climate.living
+                type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.goei_kamer_temperature
+                  - binary_sensor.goei_kamer_open_window
+              - entity: climate.goei_kamer
+                type: thermostat
 
-          - entity: climate.badkamer
-            type: thermostat
-          - entity: climate.bureau
-            type: thermostat
-          - entity: climate.slaapkamer
-            type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.badkamer_temperature
+                  - binary_sensor.badkamer_open_window
+              - entity: climate.badkamer
+                type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.bureau_temperature
+                  - binary_sensor.bureau_open_window
+              - entity: climate.bureau
+                type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.slaapkamer_temperature
+                  - binary_sensor.slaapkamer_open_window
+              - entity: climate.slaapkamer
+                type: thermostat
 
-          - entity: climate.fran
-            type: thermostat
-          - entity: climate.roos
-            type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.fran_temperature
+                  - binary_sensor.fran_open_window
+              - entity: climate.fran
+                type: thermostat
+          - type: vertical-stack
+            cards:
+              - type: glance
+                show_name: false
+                entities:
+                  - sensor.roos_temperature
+                  - binary_sensor.roos_open_window
+              - entity: climate.roos
+                type: thermostat
