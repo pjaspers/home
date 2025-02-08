@@ -19,26 +19,18 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.pj_outside_zone
-    - service: notify.mobile_app_oranje
-      data:
-        title: pjaspers has left the building
 
-- alias: "loc. Returning home"
-  id: returning-home
+- alias: "loc. Notify about arming"
+  id: notify-arm
   mode: single
-  condition:
-    - condition: state
+  triggers:
+    - trigger: state
       entity_id: input_boolean.pj_outside_zone
-      state: "on"
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.home_piet_distance
-      below: 100
-  action:
-    - service: notify.mobile_app_oranje
+      to: "on"
+  actions:
+    - action:  notify.mobile_app_oranje
       data:
-        title: You have returned within 100m
-        message: Greetings!
+        message: pjaspers has left the building
 
 - alias: "loc. Arrived home"
   id: arrived-home
@@ -54,10 +46,14 @@
   action:
     - service: notify.mobile_app_oranje
       data:
-        title: You are in the zone
+        title: You returned home!
         message: Salutations!
     - event: "x-returned-home"
+    - service: input_boolean.turn_off
+      data:
+        enitty_id: input_boolean.pj_outside_zone
 
+# Christine bericht sturen en mij bericht sturen
 - id: "x-returned-home"
   alias: "Returning home"
   trigger:
@@ -71,20 +67,3 @@
     - service:  cover.open_cover
       data:
         entity_id: cover.garage_door
-
-- alias: "loc. Also home"
-  id: also-home
-  mode: single
-  condition:
-    - condition: state
-      entity_id: input_boolean.pj_outside_zone
-      state: "on"
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.home_piet_distance
-      below: 2
-  action:
-    - service: notify.mobile_app_oranje
-      data:
-        title: You are at your doorstep
-        message: Salutations!
