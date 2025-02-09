@@ -124,12 +124,12 @@
       entity_id: cover.garage_door
       to: open
       for:
-        minutes: input_number.garage_door_duration_minutes | int
+        minutes: input_number.garage_door_duration_minutes | float
     - trigger: state
       entity_id: binary_sensor.garage
       to: open
       for:
-        minutes: input_number.garage_door_duration_minutes | int
+        minutes: input_number.garage_door_duration_minutes | float
   action:
     - action: cover.close_cover
       data:
