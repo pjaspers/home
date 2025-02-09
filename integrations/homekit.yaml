@@ -29,3 +29,4 @@ filter:
       - script.such_lights
       - lock.nuki
       - button.nuki_unlatch
+      - input_boolean.ch_automatic_garage_opener
