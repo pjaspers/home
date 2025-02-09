@@ -116,3 +116,21 @@
   action:
     service: homeassistant.turn_off
     entity_id: light.bureau
+
+- id: 'auto-close-garage'
+  alias: Close the garage door if someone leaves it open
+  trigger:
+    - trigger: state
+      entity_id: cover.garage_door
+      to: open
+      for:
+        minutes: input_number.garage_door_duration_minutes
+    - trigger: state
+      entity_id: binary_sensor.garage
+      to: open
+      for:
+        minutes: input_number.garage_door_duration_minutes
+  action:
+    - action: cover.close_cover
+      data:
+        entity_id: cover.garage_door

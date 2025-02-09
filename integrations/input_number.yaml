@@ -5,3 +5,12 @@ basement_light_duration_minutes:
   min: 0
   max: 60
   step: 1
+
+
+garage_door_duration_minutes:
+  name: "Minutes before garage door auto closes"
+  icon: mdi:clock-start
+  initial: 10
+  min: 0
+  max: 60
+  step: 1
