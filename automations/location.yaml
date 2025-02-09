@@ -20,53 +20,78 @@
     - service: input_boolean.turn_on
       entity_id: input_boolean.pj_outside_zone
 
-- alias: "loc. Notify about arming"
+- alias: "loc. Notify about being away"
   id: notify-arm
   mode: single
   triggers:
     - trigger: state
-      entity_id: input_boolean.pj_outside_zone
-      to: "on"
+      entity_id: person.piet_jaspers
+      to: "away"
   actions:
     - action:  notify.mobile_app_oranje
       data:
         message: pjaspers has left the building
 
-- alias: "loc. Arrived home"
-  id: arrived-home
+- alias: "loc. pj arrived home"
+  id: pj-arrived-home
   mode: single
-  condition:
-    - condition: state
-      entity_id: input_boolean.pj_outside_zone
-      state: "on"
   trigger:
-    - platform: state
+    - trigger: state
       entity_id: person.piet_jaspers
+      from: away
       to: home
   action:
+    - event: "x-pj-returned-home"
+
+- alias: "loc. ch arrived home"
+  id: ch-arrived-home
+  mode: single
+  trigger:
+    - trigger: state
+      entity_id: person.christine
+      from: away
+      to: home
+  action:
+    - event: "x-ch-returned-home"
+
+- id: "pj-returned-home"
+  alias: "Piet returning home"
+  triggers:
+    - trigger: event
+      event_type: x-pj-returned-home
+  conditions:
+    - condition: state
+      entity_id: input_boolean.pj_automatic_garage_opener
+      state: "on"
+  actions:
     - service: notify.mobile_app_oranje
       data:
         title: You returned home!
-        message: Salutations!
-    - event: "x-returned-home"
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.pj_outside_zone
-
-# Christine bericht sturen en mij bericht sturen
-- id: "x-returned-home"
-  alias: "Returning home"
-  triggers:
-    - trigger: event
-      event_type: x-returned-home
-  conditions:
-    - condition: state
-      entity_id: input_boolean.arm_the_automatic_garage_opener
-      state: "on"
-  actions:
+        message: Opening the pod bay doors (because you asked me)
     - action:  input_boolean.turn_off
       data:
-        entity_id: input_boolean.arm_the_automatic_garage_opener
+        entity_id: input_boolean.pj_automatic_garage_opener
+    - action:  cover.open_cover
+      data:
+        entity_id: cover.garage_door
+
+- id: "ch-returned-home"
+  alias: "Christine returning home"
+  triggers:
+    - trigger: event
+      event_type: x-ch-returned-home
+  conditions:
+    - condition: state
+      entity_id: input_boolean.ch_automatic_garage_opener
+      state: "on"
+  actions:
+    - service: notify.mobile_app_stienfoon
+      data:
+        title: Je bent thuis!
+        message: Ik open de garage (omdat je dat wou)
+    - action:  input_boolean.turn_off
+      data:
+        entity_id: input_boolean.ch_automatic_garage_opener
     - action:  cover.open_cover
       data:
         entity_id: cover.garage_door

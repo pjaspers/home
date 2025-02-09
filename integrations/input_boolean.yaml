@@ -1,19 +1,9 @@
-party_mode:
-  name: Party Mode
+pj_automatic_garage_opener:
+  name: Piet's auto garage toggle
   initial: off
-  icon: mdi:party-popper
+  icon: mdi:verified
 
-vacation_mode:
-  name: Vacation Mode
-  initial: off
-  icon: mdi:airplane
-
-pj_outside_zone:
-  name: Consider me outside of the zone
-  initial: off
-  icon: mdi:radar
-
-arm_the_automatic_garage_opener:
-  name: Arm the Garage Opener 2000
+ch_automatic_garage_opener:
+  name: Christine's autogarage toggle
   initial: off
   icon: mdi:verified
