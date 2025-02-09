@@ -41,6 +41,7 @@ automation living: !include automations/living.yaml
 # Integrations
 input_datetime: !include integrations/input_datetime.yaml
 input_boolean: !include integrations/input_boolean.yaml
+input_number: !include integrations/input_number.yaml
 timer: !include integrations/timer.yaml
 light: !include integrations/light.yaml
 homekit: !include integrations/homekit.yaml
