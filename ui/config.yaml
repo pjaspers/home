@@ -9,7 +9,5 @@ views:
           - input_datetime.wake_up_house
           - input_datetime.alarm_clock_girls
           - input_datetime.alarm_clock_girls_weekend
-          - input_boolean.party_mode
-          - input_boolean.vacation_mode
-          - input_boolean.pj_outside_zone
-          - input_boolean.arm_the_automatic_garage_opener
+          - input_boolean.ch_automatic_garage_opener
+          - input_boolean.pj_automatic_garage_opener
