@@ -3,7 +3,7 @@
   triggers:
     - trigger: state
       entity_id: switch.living_spots_front_switch_0
-      not_from:
+      not_to:
         - "unknown"
         - "unavailable"
   action:
@@ -17,7 +17,7 @@
   triggers:
     - trigger: state
       entity_id: switch.living_spots_back_switch_0
-      not_from:
+      not_to:
         - "unknown"
         - "unavailable"
   actions:
