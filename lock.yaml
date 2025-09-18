@@ -1,12 +1,16 @@
 - platform: template
   name: "Front Door 130"
   unique_id: "front_door_130"
-  value_template: >-
+  state: |
     # on means open
     {% if is_state('binary_sensor.voordeur_130_door', 'on') %}
-      true
+      open
     {% else %}
-      false
+      {% if is_state('lock.nuki', 'locked') %}
+        locked
+      {% else %}
+        unlocked
+      {% endif %}
     {% endif %}
   availability_template: "{{ states('lock.nuki') not in ['unavailable', 'unknown'] }}"
   lock:
