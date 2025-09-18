@@ -62,7 +62,7 @@ climate:
     - climate.goei_kamer
 
 cover: !include cover.yaml
-lock: !include lock.yaml
+template: !include templates.yaml
 
 # Legacy: https://www.home-assistant.io/integrations/template#configuration-variables
 sensor: !include sensors.yaml

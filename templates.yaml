@@ -1,0 +1,21 @@
+# Template entities
+- lock:
+    - name: "Front Door 130"
+      unique_id: "front_door_130"
+      state: >
+        {% if is_state('binary_sensor.voordeur_130_door', 'on') %}
+          open
+        {% elif is_state('lock.nuki', 'locked') %}
+          locked
+        {% else %}
+          unlocked
+        {% endif %}
+      availability: "{{ states('lock.nuki') not in ['unavailable', 'unknown'] }}"
+      lock:
+        action: lock.lock
+        target:
+          entity_id: lock.nuki
+      unlock:
+        action: lock.open
+        target:
+          entity_id: lock.nuki
