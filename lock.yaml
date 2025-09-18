@@ -1,13 +1,18 @@
 - platform: template
-  locks:
-    front_door_130:
-      unique_id: "front_door_130"
-      device_class: garage
-      lock:
-        service: lock.lock
-        target:
-          entity_id: lock.nuki
-      unlock:
-        service: lock.open
-        target:
-          entity_id: lock.nuki
+  name: "Front Door 130"
+  unique_id: "front_door_130"
+  value_template: >-
+    {% if is_state('binary_sensor.voordeur_130_door', 'on') %}
+      false
+    {% else %}
+      {{ is_state('lock.nuki', 'locked') }}
+    {% endif %}
+  availability_template: "{{ states('lock.nuki') not in ['unavailable', 'unknown'] }}"
+  lock:
+    service: lock.lock
+    target:
+      entity_id: lock.nuki
+  unlock:
+    service: lock.open
+    target:
+      entity_id: lock.nuki
