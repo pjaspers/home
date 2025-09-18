@@ -4,9 +4,9 @@
   value_template: >-
     # on means open
     {% if is_state('binary_sensor.voordeur_130_door', 'on') %}
-      false
-    {% else %}
       true
+    {% else %}
+      false
     {% endif %}
   availability_template: "{{ states('lock.nuki') not in ['unavailable', 'unknown'] }}"
   lock:
