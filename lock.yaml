@@ -6,7 +6,7 @@
     {% if is_state('binary_sensor.voordeur_130_door', 'on') %}
       false
     {% else %}
-      {{ is_state() }}
+      true
     {% endif %}
   availability_template: "{{ states('lock.nuki') not in ['unavailable', 'unknown'] }}"
   lock:
