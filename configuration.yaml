@@ -62,6 +62,8 @@ climate:
     - climate.goei_kamer
 
 cover: !include cover.yaml
+lock: !include lock.yaml
+
 # Legacy: https://www.home-assistant.io/integrations/template#configuration-variables
 sensor: !include sensors.yaml
 binary_sensor: !include binary_sensors.yaml
@@ -103,4 +105,4 @@ shell_command:
   send_location: >
     curl -X POST -d "data={{ state_attr("device_tracker.oranje", "latitude") }};{{ state_attr("device_tracker.oranje", "longitude") }};{{ state_attr("device_tracker.oranje", "altitude") }};{{ state_attr("device_tracker.oranje", "battery_level") }}" http://pjmini.local:4567/api/track
 
-prometheus:    
+prometheus:

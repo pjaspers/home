@@ -1,0 +1,13 @@
+- platform: template
+  locks:
+    front_door_130:
+      unique_id: "front_door_130"
+      device_class: garage
+      lock:
+        service: lock.lock
+        target:
+          entity_id: lock.nuki
+      unlock:
+        service: lock.open
+        target:
+          entity_id: lock.nuki
