@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'yaml'
+
+Dir.glob('automations/*.jsonnet').each do |jsonnet_file|
+  base = File.basename(jsonnet_file, '.jsonnet')
+  yaml_file = "automations/#{base}.yaml"
+
+  puts "  #{base}.jsonnet -> #{base}.yaml"
+
+  json_output = `jsonnet "#{jsonnet_file}"`
+  data = JSON.parse(json_output)
+
+  File.write(yaml_file, YAML.dump(data))
+end

@@ -1,0 +1,148 @@
+local wakeActions = [
+  {
+    event: 'pj.wake-girls.prepare',
+    event_data: {
+      weekday: true,
+    },
+  },
+  { delay: 10 },
+  {
+    event: 'pj.wake-girls.fire',
+    event_data: {
+      weekday: true,
+    },
+  },
+  { delay: 3600 },
+  {
+    event: 'pj.wake-girls.teardown',
+    event_data: {
+      weekday: true,
+    },
+  },
+];
+
+[
+  {
+    id: 'wake-girls-weekdays',
+    alias: 'Wake up the girls during the week',
+    trigger: [
+      {
+        platform: 'template',
+        value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls.attributes.timestamp | int) | timestamp_custom('%H:%M', False)) }}",
+      },
+    ],
+    condition: {
+      condition: 'state',
+      entity_id: 'binary_sensor.workday_sensor',
+      state: 'on',
+    },
+    action: wakeActions,
+  },
+  {
+    id: 'wake-girls-weekend',
+    alias: 'Wake up the girls during the weekend',
+    trigger: [
+      {
+        platform: 'template',
+        value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls_weekend.attributes.timestamp | int) | timestamp_custom('%H:%M', False)) }}",
+      },
+    ],
+    condition: {
+      condition: 'state',
+      entity_id: 'binary_sensor.workday_sensor',
+      state: 'off',
+    },
+    action: wakeActions,
+  },
+  {
+    id: 'wake-girls-prepare',
+    alias: 'Wake girls prepare',
+    trigger: [
+      {
+        platform: 'event',
+        event_type: 'pj.wake-girls.prepare',
+      },
+    ],
+    action: [
+      {
+        service: 'scene.create',
+        data: {
+          scene_id: 'girls_before_wake',
+          snapshot_entities: [
+            'light.dollhousefran',
+            'light.wled_roos',
+            'group.switches_girls',
+          ],
+        },
+      },
+      {
+        service: 'light.turn_off',
+        entity_id: [
+          'light.wled_roos',
+          'light.dollhousefran',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wake-girls-now',
+    alias: 'Wake girls now',
+    trigger: [
+      {
+        platform: 'event',
+        event_type: 'pj.wake-girls.fire',
+      },
+    ],
+    action: [
+      {
+        service: 'light.turn_on',
+        entity_id: [
+          'light.wled_roos',
+          'light.dollhousefran',
+        ],
+        data: {
+          rgb_color: [
+            119,
+            187,
+            65,
+          ],
+          brightness_pct: 90,
+        },
+      },
+      {
+        service: 'homeassistant.turn_on',
+        entity_id: 'group.switches_girls',
+      },
+    ],
+  },
+  {
+    id: 'wake-girls-after',
+    alias: 'Wake girls after',
+    trigger: [
+      {
+        platform: 'event',
+        event_type: 'pj.wake-girls.teardown',
+      },
+    ],
+    action: [
+      {
+        service: 'homeassistant.turn_off',
+        entity_id: 'group.switches_girls',
+      },
+      {
+        service: 'scene.turn_on',
+        target: {
+          entity_id: 'scene.girls_before_wake',
+        },
+      },
+      { delay: 20 },
+      {
+        service: 'light.turn_off',
+        entity_id: [
+          'light.wled_roos',
+          'light.dollhousefran',
+        ],
+      },
+    ],
+  },
+]

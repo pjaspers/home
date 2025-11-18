@@ -1,90 +1,96 @@
-# Set up the triggers
-#
-- x-actions: &wake_actions
-    - event: "pj.wake-girls.prepare"
-      event_data:
-        weekday: true
-    - delay: 10
-    - event: "pj.wake-girls.fire"
-      event_data:
-        weekday: true
-    - delay: 3600
-    - event: "pj.wake-girls.teardown"
-      event_data:
-        weekday: true
-
-- id: wake-girls-weekdays
+---
+- action:
+  - event: pj.wake-girls.prepare
+    event_data:
+      weekday: true
+  - delay: 10
+  - event: pj.wake-girls.fire
+    event_data:
+      weekday: true
+  - delay: 3600
+  - event: pj.wake-girls.teardown
+    event_data:
+      weekday: true
   alias: Wake up the girls during the week
-  trigger:
-  - platform: template
-    value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls.attributes.timestamp | int) | timestamp_custom('%H:%M', False)) }}"
   condition:
     condition: state
     entity_id: binary_sensor.workday_sensor
-    state: "on"
-  action: *wake_actions
-
-- id: wake-girls-weekend
+    state: 'on'
+  id: wake-girls-weekdays
+  trigger:
+  - platform: template
+    value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls.attributes.timestamp
+      | int) | timestamp_custom('%H:%M', False)) }}"
+- action:
+  - event: pj.wake-girls.prepare
+    event_data:
+      weekday: true
+  - delay: 10
+  - event: pj.wake-girls.fire
+    event_data:
+      weekday: true
+  - delay: 3600
+  - event: pj.wake-girls.teardown
+    event_data:
+      weekday: true
   alias: Wake up the girls during the weekend
-  trigger:
-  - platform: template
-    value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls_weekend.attributes.timestamp | int) | timestamp_custom('%H:%M', False)) }}"
   condition:
     condition: state
     entity_id: binary_sensor.workday_sensor
-    state: "off"
-  action: *wake_actions
-
-- id: wake-girls-prepare
-  alias: "Wake girls prepare"
+    state: 'off'
+  id: wake-girls-weekend
   trigger:
-    - platform: event
-      event_type: "pj.wake-girls.prepare"
-  action:
-  - service: scene.create
-    data:
-      scene_id: "girls_before_wake"
+  - platform: template
+    value_template: "{{ states('sensor.time') == ((states.input_datetime.alarm_clock_girls_weekend.attributes.timestamp
+      | int) | timestamp_custom('%H:%M', False)) }}"
+- action:
+  - data:
+      scene_id: girls_before_wake
       snapshot_entities:
-        - light.dollhousefran
-        - light.wled_roos
-        - group.switches_girls
-  - service: light.turn_off
-    entity_id:
-      - light.wled_roos
       - light.dollhousefran
-
-- id: wake-girls-now
-  alias: "Wake girls now"
+      - light.wled_roos
+      - group.switches_girls
+    service: scene.create
+  - entity_id:
+    - light.wled_roos
+    - light.dollhousefran
+    service: light.turn_off
+  alias: Wake girls prepare
+  id: wake-girls-prepare
   trigger:
-    - platform: event
-      event_type: "pj.wake-girls.fire"
-  action:
-  - service: light.turn_on
-    entity_id:
-      - light.wled_roos
-      - light.dollhousefran
-    data:
-      rgb_color:
-        - 119
-        - 187
-        - 65
+  - event_type: pj.wake-girls.prepare
+    platform: event
+- action:
+  - data:
       brightness_pct: 90
-  - service: homeassistant.turn_on
-    entity_id: group.switches_girls
-
-- id: wake-girls-after
-  alias: "Wake girls after"
+      rgb_color:
+      - 119
+      - 187
+      - 65
+    entity_id:
+    - light.wled_roos
+    - light.dollhousefran
+    service: light.turn_on
+  - entity_id: group.switches_girls
+    service: homeassistant.turn_on
+  alias: Wake girls now
+  id: wake-girls-now
   trigger:
-    - platform: event
-      event_type: "pj.wake-girls.teardown"
-  action:
-  - service: homeassistant.turn_off
-    entity_id: group.switches_girls
+  - event_type: pj.wake-girls.fire
+    platform: event
+- action:
+  - entity_id: group.switches_girls
+    service: homeassistant.turn_off
   - service: scene.turn_on
     target:
       entity_id: scene.girls_before_wake
   - delay: 20
-  - service: light.turn_off
-    entity_id:
-      - light.wled_roos
-      - light.dollhousefran
+  - entity_id:
+    - light.wled_roos
+    - light.dollhousefran
+    service: light.turn_off
+  alias: Wake girls after
+  id: wake-girls-after
+  trigger:
+  - event_type: pj.wake-girls.teardown
+    platform: event
