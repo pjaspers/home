@@ -126,7 +126,7 @@
       for:
         minutes: "{{ states('input_number.garage_door_duration_minutes') | float }}"
     - trigger: state
-      entity_id: binary_sensor.garage
+      entity_id: binary_sensor.garage_door
       to: open
       for:
         minutes: "{{ states('input_number.garage_door_duration_minutes') | float }}"

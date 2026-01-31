@@ -4,13 +4,13 @@
       unique_id: "garage_door_cover"
       device_class: garage
       state: >
-        {% if is_state('binary_sensor.garage','on') %}
+        {% if is_state('binary_sensor.garage_door','on') %}
           Open
         {% else %}
           Closed
         {% endif %}
       icon: >
-        {% if is_state('binary_sensor.garage','on') %}
+        {% if is_state('binary_sensor.garage_door','on') %}
           mdi:garage-open
         {% else %}
           mdi:garage
