@@ -61,7 +61,6 @@ climate:
     - climate.keuken
     - climate.goei_kamer
 
-cover: !include cover.yaml
 template: !include templates.yaml
 
 # Legacy: https://www.home-assistant.io/integrations/template#configuration-variables

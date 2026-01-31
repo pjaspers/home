@@ -11,13 +11,6 @@
     - precipitation_forecast_average
     - rainchance_1d
 
-- platform: template
-  sensors:
-    office_temperature_offset:
-      friendly_name: "Diff on office temp"
-      unit_of_measurement: "°C"
-      value_template: "{{states('sensor.bureau_temperature')|float - states('sensor.office_sensor_temp')|float}}"
-
 - platform: afvalbeheer
   wastecollector: RecycleApp
   resources:
